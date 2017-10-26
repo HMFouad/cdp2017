@@ -1,4 +1,4 @@
- <h2>Membre de groupe:</h2>
+ <h2>Membres de groupe:</h2>
  <ul>
   <li>HOCINI Mohamed Fouad</li>
   <li>Gning Anne</li>
@@ -6,6 +6,8 @@
   <li>BEDIN Dylan</li>
 </ul> 
 	 
+<h2>Backlog:</h1>
+
 <table>
     <thead>
         <tr>
