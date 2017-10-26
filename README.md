@@ -71,11 +71,65 @@
             <td align="right">value</td>
         </tr>        
         <tr>
-            <td>En tant que PO je peux voir la liste des utilisateurs qui participent à mon projet</td>
-            <td align="center">1</td>
+            <td>En tant que Developpeur je peux mettre à jour les users stories</td>
+            <td align="center">3</td>
             <td align="right">value</td>
             <td align="right">value</td>
         </tr>     
-        
+        <tr>
+            <td>En tant que Developpeur je peux uploader la doc</td>
+            <td align="center">1</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Developpeur je peux maj les tests</td>
+            <td align="center">3</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Developpeur je peux maj les builds	</td>
+            <td align="center">3</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Developpeur je peux maj les tâches	</td>
+            <td align="center">3</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Developpeur je peux modifier le Backlog</td>
+            <td align="center">1</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Développeur je peux créer/modifier un Sprint</td>
+            <td align="center">2</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>   
+        <tr>
+            <td>En tant que Développeur je peux ajouter/supprimer des US à un Sprint</td>
+            <td align="center">2</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>  
+        <tr>
+            <td>En tant que Développeur je peux affecter un Développeur à une tâche</td>
+            <td align="center">1</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>  
+        <tr>
+            <td>En tant qu'Observateur je peux voir l'état d'avancement du projet	</td>
+            <td align="center">1</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr> 
+
    </tbody>
 </table>
