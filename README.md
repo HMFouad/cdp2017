@@ -1,9 +1,9 @@
  <h2>Membre de groupe:</h2>
  <ul>
-  <li>- HOCINI Mohamed Fouad</li>
-  <li>- Gning Anne</li>
-  <li>- Gamelas Guillaume</li>
-  <li>- BEDIN Dylan</li>
+  <li>HOCINI Mohamed Fouad</li>
+  <li>Gning Anne</li>
+  <li>Gamelas Guillaume</li>
+  <li>BEDIN Dylan</li>
 </ul> 
 	 
 <table>
@@ -30,13 +30,13 @@
         </tr>
         <tr>
             <td>En tant qu'Utilisateur je peux créer un projet </td>
-            <td align="center">1</td>
+            <td align="center">2</td>
             <td align="right">value</td>
             <td align="right">value</td>
         </tr>
         <tr>
             <td>En tant qu'Utilisateur je peux voir ma liste de projets </td>
-            <td align="center">2</td>
+            <td align="center">1</td>
             <td align="right">value</td>
             <td align="right">value</td>
         </tr>
@@ -69,7 +69,13 @@
             <td align="center">2</td>
             <td align="right">value</td>
             <td align="right">value</td>
-        </tr>        
+        </tr>   
+		<tr>
+            <td>En tant que PO je peux voir la liste des utilisateurs qui participent à mon projet</td>
+            <td align="center">1</td>
+            <td align="right">value</td>
+            <td align="right">value</td>
+        </tr>      
         <tr>
             <td>En tant que Developpeur je peux mettre à jour les users stories</td>
             <td align="center">3</td>
