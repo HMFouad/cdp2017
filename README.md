@@ -1,5 +1,5 @@
-| Descriptif    | Difficulté    | Priorité      | Valide        |
-| ------------- | ------------- | ------------- | ------------- |
+| Descriptif    | Difficulté    | Priorité      | Validation        |
+| ------------- | :-------------: | :-------------: | :-------------: |
 | En tant que Visiteur je peux m'inscrire  | 2 | | |
 | En tant que Visiteur je peux me connecter | 1 | | |
 | En tant qu'Utilisateur je peux créer un projet | 2 | | |
