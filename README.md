@@ -1,9 +1,9 @@
-Il y a 5 types d'utilisateur.
-	* Visiteur: personne n'ayant pas encore accès aux projets et pouvant s'inscrire ou se connecter
-	* Utilisateur: personne connecté pouvant accéder à une liste de projets et en créer
-	* Observateur: personne n'ayant que des accès en lecture au projet
-	* Développeur: membre du projet ajouté par le PO ayant tous les droits de l'observateur + d'autres droits détaillés ci-dessous
-	* PO: Product Owner, client du produit final demandé, il a les droits des développeurs + d'autres droits détaillés ci-dessous
+Il y a 5 types d'utilisateur:
+* Visiteur: personne n'ayant pas encore accès aux projets et pouvant s'inscrire ou se connecter.
+* Utilisateur: personne connecté pouvant accéder à une liste de projets et en créer.
+* Observateur: personne n'ayant que des accès en lecture au projet.
+* Développeur: membre du projet ajouté par le PO ayant tous les droits de l'observateur + d'autres droits détaillés ci-dessous.
+* PO: Product Owner, client du produit final demandé, il a les droits des développeurs + d'autres droits détaillés ci-dessous.
 
 
 | Descriptif    | Difficulté    | Priorité      | Validation        |
