@@ -25,8 +25,6 @@ Il y a 5 types d'utilisateur.
 | En tant que développeur je peux ajouter/supprimer les tests | 2 | 2 | |
 | En tant que développeur je peux ajouter/supprimer les builds | 2 | 2 | |
 | En tant que développeur je peux ajouter/supprimer les tâches | 2 | 3 | |
-| En tant que développeur je dois pouvoir générer des diagrammes (PERT) grâce aux différentes tâches effectuées | 4 | 4 | |
-| En tant que développeur je peux accéder aux diagrammes en lien avec les tâches effectuées | 1 | 4 | |
 | En tant que développeur je peux ajouter/supprimer des user stories du Backlog | 2 | 3 | |
 | En tant que développeur je peux modifier les user stories du Backlog | 1 | 3 | |
 | En tant que développeur je peux créer/supprimer un Sprint | 2 | 4 | |
