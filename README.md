@@ -7,7 +7,7 @@ Il y a 5 types d'utilisateur:
 
 
 | ID | Descriptif    | Difficulté    | Priorité      | Validation        |
-| :--:| ------------ | ------------ | :-------------: | :-------------: | :-------------: |
+| :--: | ------------ | :-------------: | :-------------: | :-------------: |
 | #1 | En tant que visiteur je peux m'inscrire  | 3 |  | |
 | #2 | En tant que visiteur je peux me connecter | 1 |  | |
 | #3 | En tant qu'utilisateur je peux me déconnecter | 1 |  | |
