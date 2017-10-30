@@ -9,7 +9,7 @@ Il y a 5 types d'utilisateur:
 | ID | Descriptif    | Difficulté    | Priorité      | Validation        |
 | :--: | ------------ | :-------------: | :-------------: | :-------------: |
 | #1 | En tant que visiteur je peux m'inscrire en donnant mon login, mon password et mon mail | 3 |  | |
-| #2 | En tant que visiteur je peux me connecter en donnant mon login et mon passord | 1 |  | |
+| #2 | En tant que visiteur je peux me connecter en donnant mon login et mon password | 1 |  | |
 | #3 | En tant qu'utilisateur je peux me déconnecter | 1 |  | |
 | #4 | En tant qu'utilisateur je peux créer un projet en lui donnant un nom et une description ainsi que le backlog | 3 |  | |
 | #5 | En tant qu'utilisateur je peux voir ma liste de projets afin d'accéder à l'un d'entre eux | 1 |  | |
