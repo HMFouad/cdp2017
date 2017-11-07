@@ -2,7 +2,7 @@ Backlog
 ==
 
 | ID | Descriptif | Difficulté | Priorité | État |
-| :-: |  | :-: | :-: | :-: |
+| :-: | -- | :-: | :-: | :-: |
 | #1 | En tant que visiteur je peux m'inscrire en donnant mon login, mon password et mon mail | 3 | 1 | TODO |
 | #2 | En tant que visiteur je peux me connecter en donnant mon login et mon password | 1 | 1 | TODO |
 | #3 | En tant que développeur je peux créer un projet en lui donnant un nom et une description | 2 | 1 | TODO |

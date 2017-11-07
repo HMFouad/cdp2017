@@ -4,7 +4,7 @@ Du Lundi 4/12 au Vendredi 15/12
 --
 
 | ID | Descriptif | Difficulté | Priorité | État |
-| :-: | | :-: | :-: | :-: |
+| :-: | -- | :-: | :-: | :-: |
 | #10 | En tant que développeur je peux ajouter/supprimer une tâche à un Sprint en lui affectant un ID, une description, un état("Todo", "Doing", "Done") | 2 | 3 | TODO |
 | #11 | En tant que développeur je peux associer un développeur à une tâche | 1 | 4 | TODO |
 | #12 | En tant que développeur je peux modifier l'état d'une tâche à "Todo", "Doing", ou "Done" | 1 | 4 | TODO |
