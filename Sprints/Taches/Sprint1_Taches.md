@@ -1,5 +1,5 @@
 | ID | Descriptif    | Developpeur |  Etat    |
-| :-----: | :------------: | :-------------: | :-------------: |
+| :-----: | ------------ | :-------------: | :-------------: |
 | T | Définir le nom des champs du formulaire d'inscription |  | TODO |
 | T | Définir la requête SQL d'inscription |  | TODO |
 | T | Définir la requête SQL de connexion |  | TODO |
