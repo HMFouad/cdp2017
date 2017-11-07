@@ -1,4 +1,4 @@
-Tâches du Sprint 2
+Sprint 2
 ==
 Du Lundi 20/11 au Vendredi 1/12
 --

@@ -1,4 +1,4 @@
-Tâches du Sprint 3
+Sprint 3
 ==
 Du Lundi 4/12 au Vendredi 15/12
 --

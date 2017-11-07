@@ -1,4 +1,4 @@
-Tâches du Sprint 1
+Sprint 1
 ==
 Du Lundi 8/11 au Vendredi 17/11
 --
