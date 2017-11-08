@@ -10,15 +10,15 @@ CREATE TABLE Users (
 CREATE TABLE Projects (
        id INT NOT NULL AUTO_INCREMENT,
        project VARCHAR(30) UNIQUE NOT NULL,
-       desc VARCHAR(100),
-[PRIMARY KEY (id)]
+       description VARCHAR(100),
+       PRIMARY KEY (id)
 );
 
 CREATE TABLE Acl (
        user_id INT,
        project_id INT,
-       FOREIGN KEY user_id REFERENCES Users(id),
-       FOREIGN KEY project_id REFERENCES Projects(id)
+       FOREIGN KEY (user_id) REFERENCES Users(id),
+       FOREIGN KEY (project_id) REFERENCES Projects(id)
 );
 
 
