@@ -6,18 +6,18 @@ Tâches du Sprint 1
 | Ttrav1 | Configurer Travis pour observer la branche git du code à tester en continu | ggamelas | TODO |
 | Ttrav2 | Configurer Travis pour qu'il effectue des tests | ggamelas | TODO |
 | Ttrav3 | Configurer Travis pour définir le résultat en sortie | ggamelas | TODO |
-| Tfs1 | Définir le nom des champs du formulaire d'inscription et de connexion (username, password, confirmation du password) |  | TODO |
-| Tfs2 | Définir le nom des champs du formulaire de création de projet (nom du projet, description) |  | TODO |
-| Tfs3 | Définir le nom des champs du formulaire d'invitation à un projet |  | TODO |
+| Tfs1 | Définir le nom des champs du formulaire d'inscription et de connexion (username, password) | ggamelas | DONE |
+| Tfs2 | Définir le nom des champs du formulaire de création de projet (nom du projet, description) | ggamelas | DONE |
+| Tfs3 | Définir le nom des champs du formulaire d'invitation à un projet | ggamelas | DONE |
 | Tsb1 | Définir les tables et les champs de la BDD pour l'inscription et la connexion |  | TODO |
 | Tsb2 | Définir les tables et les champs de la BDD pour la création d'un projet |  | TODO |
 | Tsb3 | Définir les tables et les champs de la BDD pour l'invitation d'une personne dans un projet |  | TODO |
-| Tf1 | Créer l'interface d'inscription |  | TODO |
-| Tf2 | Créer l'interface de connexion |  | TODO |
-| Tf3 | Créer l'interface de création d'un projet |  | TODO |
+| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username", "password" |  | TODO |
+| Tf2 | Créer l'interface de connexion avec comme noms de champs "username", "password" |  | TODO |
+| Tf3 | Créer l'interface de création d'un projet avec comme noms de champs "projectName", "description" |  | TODO |
 | Tf4 | Créer l'interface de la liste des projets |  | TODO |
 | Tf5 | Créer l'interface de base d'un projet |  | TODO |
-| Tf6 | Créer l'interface d'invitation dans un projet |  | TODO |
+| Tf6 | Créer l'interface d'invitation dans un projet avec comme nom de champ "username" pour l'utilisateur à inviter |  | TODO |
 | Ts1 | Récupérer et vérifier les données de l'inscription, puis les enregistrer dans la BD |  | TODO |
 | Ts2 | Récupérer les données de connexion pour les comparer à celles dans la BD |  | TODO |
 | Ts3 | Récupérer les données du nouveau projet, puis les enregistrer dans la BD |  | TODO |
