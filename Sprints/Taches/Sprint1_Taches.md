@@ -27,3 +27,9 @@ Tâches du Sprint 1
 | T | Créer les tables et les champs de la BDD pour l'inscription et la connexion |  | TODO |
 | T | Créer les tables et les champs de la BDD pour la création d'un projet |  | TODO |
 | T | Créer les tables et les champs de la BDD pour l'invitation d'une personne dans un projet |  | TODO |
+| T | Exécuter le test E2E de l'inscription (US#1) |  | TODO |
+| T | Exécuter le test E2E de la connexion (US#2) |  | TODO |
+| T | Exécuter le test E2E de la création d'un projet (US#3) |  | TODO |
+| T | Exécuter le test E2E du listage des projets (US#4) |  | TODO |
+| T | Exécuter le test E2E de la création de projet (US#5) |  | TODO |
+| T | Exécuter le test E2E d'invitation dans un projet (US#6) |  | TODO |
