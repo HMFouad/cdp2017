@@ -4,7 +4,7 @@ Tâches du Sprint 1
 | ID | Descriptif | Développeur | État |
 | :-: | -- | :-: | :-: |
 | Ttrav1 | Configurer Travis pour observer la branche git du code à tester en continu | HMFouad | TODO |
-| Ttrav2 | Configurer Travis pour qu'il effectue des tests | ggamelas | TODO |
+| Ttrav2 | Configurer Travis pour qu'il effectue des tests | HMFouad | TODO |
 | Ttrav3 | Configurer Travis pour définir le résultat en sortie | ggamelas | TODO |
 | Tfs1 | Définir le nom des champs du formulaire d'inscription et de connexion (username, password) | ggamelas | DONE |
 | Tfs2 | Définir le nom des champs du formulaire de création de projet (nom du projet, description) | ggamelas | DONE |
