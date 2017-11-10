@@ -12,8 +12,8 @@ Tâches du Sprint 1
 | Tsb1 | Définir les tables et les champs de la BDD pour l'inscription et la connexion |  | TODO |
 | Tsb2 | Définir les tables et les champs de la BDD pour la création d'un projet |  | TODO |
 | Tsb3 | Définir les tables et les champs de la BDD pour l'invitation d'une personne dans un projet |  | TODO |
-| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username", "password" |  | TODO |
-| Tf2 | Créer l'interface de connexion avec comme noms de champs "username", "password" |  | TODO |
+| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username", "password" | HMFouad | TODO |
+| Tf2 | Créer l'interface de connexion avec comme noms de champs "username", "password" | HMFouad | TODO |
 | Tf3 | Créer l'interface de création d'un projet avec comme noms de champs "projectName", "description" |  | TODO |
 | Tf4 | Créer l'interface de la liste des projets |  | TODO |
 | Tf5 | Créer l'interface de base d'un projet |  | TODO |
