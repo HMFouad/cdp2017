@@ -2,10 +2,9 @@
   "name": "teamgghb",
   "version": "1.0.0",
   "description": "Conduite de Projet",
-  "main": "index.js",
+  "main": "Front/myscript.js",
   "scripts": {
-    "test": "protractor TestsProtractor/protractor.conf.js",
-    "webdriver-update": "webdriver-manager update"
+    "test": "protractor TestsProtractor/protractor.conf.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 describe('Tests for signing in', function() {
-  let baseURL = "file:///home/gg099/Projects/cdp2017/Front/";
-	let path = "Index.html";
+  let baseURL = "http://localhost:1337/";
+	let path = "";
 
   let usernameField = element(by.id('username_inscr'));
 	let passwordField = element(by.id('password_inscr'));

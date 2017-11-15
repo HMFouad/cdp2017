@@ -6,6 +6,24 @@ var app=express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var name;
 var description;
+var crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    pass = 'd6F3Efeq';
+
+  //
+function encrypt(text){
+  var cipher = crypto.createCipher(algorithm,pass)
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
+}
+ 
+function decrypt(text){
+  var decipher = crypto.createDecipher(algorithm,pass)
+  var dec = decipher.update(text,'hex','utf8')
+  dec += decipher.final('utf8');
+  return dec;
+}
 
 // Create connection
 var connection = mysql.createConnection({
@@ -34,6 +52,48 @@ else{
 }
 });
 });*/
+
+
+//get file Index.html
+app.get('/Index', function (req, res){
+  res.sendFile(path.join(__dirname+'/Index.html'));
+});
+//insert new user into the database
+app.post('/Index',urlencodedParser, function(req,res){
+      username=req.body.username;
+      password=req.body.password;
+      rpassword=req.body.rpassword;
+  
+  if (username == "") {
+    console.log("Empty username!!!");
+  }
+
+  else if (password == "") {
+    console.log("Empty password!!!");
+  }
+
+  else if (password == rpassword){
+
+    console.log(username);
+
+    res.send( req.body);
+    connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,encrypt(password)], function(error, rows) {
+      if(error){
+      console.log(error);
+      }
+      else{
+        console.log('Inscription done with success');
+        console.log(rows);
+      }
+
+});
+}
+  else{
+        console.log("password not match!!!");
+      }
+
+
+});
 
 
 //get file createProject.html

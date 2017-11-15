@@ -1,6 +1,6 @@
 exports.config = {
   seleniumServerJar: "selenium-server-standalone-3.7.1.jar",
-  specs: ['testSignIn.js'],
+  specs: ['testsSignIn.js'],
   /*onPrepare: function() {
 
         // By default, Protractor use data:text/html,<html></html> as resetUrl, but
