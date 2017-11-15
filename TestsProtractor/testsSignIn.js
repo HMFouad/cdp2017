@@ -1,5 +1,3 @@
-
-
 describe('Tests for signing in', function() {
   let baseURL = "file:///home/gg099/Projects/cdp2017/Front/";
 	let path = "Index.html";
@@ -19,7 +17,7 @@ describe('Tests for signing in', function() {
 
   it('Good way', function(){
     browser.get(baseURL+path);
-    fillFields('aaa', pwd, pwd);
+    fillFields('fooa', pwd, pwd);
     signUpButton.click();
     //TODO check que l'inscription est faite
   });
@@ -32,27 +30,27 @@ describe('Tests for signing in', function() {
 
   it('No username', function(){
     browser.get(baseURL+path);
-    fillFields('aab', pwd, pwd);
+    fillFields('foob', pwd, pwd);
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
   it('No password', function(){
     browser.get(baseURL+path);
-    fillFields('aac', '', pwd);
+    fillFields('fooc', '', pwd);
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
   it('No repeat password', function(){
     browser.get(baseURL+path);
-    fillFields('aad', pwd, '');
+    fillFields('food', pwd, '');
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
   it('Twice with same username', function(){
-    let name = 'aae';
+    let name = 'fooe';
     browser.get(baseURL+path);
     fillFields(name, pwd, pwd);
     signUpButton.click();
