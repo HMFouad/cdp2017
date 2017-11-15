@@ -1,5 +1,5 @@
 exports.config = {
-  seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumServerJar: "selenium-server-standalone-3.7.1.jar",
   specs: ['testTravis.js'],
   /*onPrepare: function() {
 

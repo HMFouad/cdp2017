@@ -7,4 +7,6 @@ services:
 
 before_script:
   - npm install @angular/cli
+  - npm install selenium-server-standalone-jar@3.7.1
+  - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./TestsProtractor/
   - npm install protractor
