@@ -4,7 +4,7 @@
   "description": "Conduite de Projet",
   "main": "index.js",
   "scripts": {
-    "test": "protractor"
+    "test": "protractor TestsProtractor/protractor.conf.js"
   },
   "repository": {
     "type": "git",
