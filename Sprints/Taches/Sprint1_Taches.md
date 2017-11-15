@@ -12,10 +12,10 @@ Tâches du Sprint 1
 | Tsb1 | Définir les tables et les champs de la BDD pour l'inscription et la connexion | All | DONE |
 | Tsb2 | Définir les tables et les champs de la BDD pour la création d'un projet | All | DONE |
 | Tsb3 | Définir les tables et les champs de la BDD pour l'invitation d'une personne dans un projet | All | DONE |
-| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username_inscr", "password_inscr", "rPassword_inscr" | HMFouad | DONE |
-| Tf2 | Créer l'interface de connexion avec comme noms de champs "username_co", "password_co" | HMFouad | DONE |
-| Tf3 | Créer l'interface de création d'un projet avec comme noms de champs "Name", "Description" | Annegn | DONE |
-| Tf4 | Créer l'interface de la liste des projets | Annegn | DONE |
+| Tf1 | Créer l'interface d'inscription avec comme ids de champs "username_inscr", "password_inscr", "rPassword_inscr" | HMFouad | DONE |
+| Tf2 | Créer l'interface de connexion avec comme ids de champs "username_co", "password_co" | HMFouad | DONE |
+| Tf3 | Créer l'interface de création d'un projet avec comme ids de champs "projectName", "projectDescription" | Annegn | DONE |
+| Tf4 | Créer l'interface de la liste des projets avec comme id de liste "projectsList"  | Annegn | DONE |
 | Tf5 | Créer l'interface de base d'un projet | Annegn | DONE |
 | Tf6 | Créer l'interface d'invitation dans un projet avec comme nom de champ "username_inv" pour l'utilisateur à inviter | Dylan | TODO |
 | Ts1 | Récupérer et vérifier les données de l'inscription, puis les enregistrer dans la BD | HMFouad | DOING |
