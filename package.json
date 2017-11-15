@@ -4,7 +4,8 @@
   "description": "Conduite de Projet",
   "main": "index.js",
   "scripts": {
-    "test": "protractor TestsProtractor/protractor.conf.js"
+    "test": "protractor TestsProtractor/protractor.conf.js",
+    "webdriver-update": "webdriver-manager update"
   },
   "repository": {
     "type": "git",
