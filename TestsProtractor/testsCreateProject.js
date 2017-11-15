@@ -48,7 +48,7 @@ describe('Tests for creating a project', function() {
     signUpButton.click();
     fillFields(name, descr);
     signUpButton.click();
-    //TODO check que la 1ere est créée, mais pas la 2e
+    //TODO check que les 2 projets sont créés
   });
 
 });
