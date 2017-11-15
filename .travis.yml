@@ -6,4 +6,5 @@ services:
   - mysql
 
 before_script:
-  - npm install -g @angular/cli
+  - npm install @angular/cli
+  - npm install protractor
