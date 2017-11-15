@@ -3,8 +3,8 @@ Tâches du Sprint 1
 
 | ID | Descriptif | Développeur | État |
 | :-: | -- | :-: | :-: |
-| Ttrav1 | Configurer Travis pour observer la branche git du code à tester en continu | HMFouad | TODO |
-| Ttrav2 | Configurer Travis pour qu'il effectue des tests | HMFouad | TODO |
+| Ttrav1 | Configurer Travis pour observer la branche git du code à tester en continu | ggamelas | TODO |
+| Ttrav2 | Configurer Travis pour qu'il effectue des tests | ggamelas | TODO |
 | Ttrav3 | Configurer Travis pour définir le résultat en sortie | ggamelas | TODO |
 | Tfs1 | Définir le nom des champs du formulaire d'inscription et de connexion (username, password) | ggamelas | DONE |
 | Tfs2 | Définir le nom des champs du formulaire de création de projet (nom du projet, description) | ggamelas | DONE |
@@ -12,16 +12,16 @@ Tâches du Sprint 1
 | Tsb1 | Définir les tables et les champs de la BDD pour l'inscription et la connexion | All | DONE |
 | Tsb2 | Définir les tables et les champs de la BDD pour la création d'un projet | All | DONE |
 | Tsb3 | Définir les tables et les champs de la BDD pour l'invitation d'une personne dans un projet | All | DONE |
-| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username_inscr", "password_inscr", "rPassword_inscr" | HMFouad | TODO |
-| Tf2 | Créer l'interface de connexion avec comme noms de champs "username_co", "password_co" | HMFouad | TODO |
-| Tf3 | Créer l'interface de création d'un projet avec comme noms de champs "projectName", "projectDescription" | Annegn | TODO |
-| Tf4 | Créer l'interface de la liste des projets | Annegn | TODO |
-| Tf5 | Créer l'interface de base d'un projet | Annegn | TODO |
+| Tf1 | Créer l'interface d'inscription avec comme noms de champs "username_inscr", "password_inscr", "rPassword_inscr" | HMFouad | DONE |
+| Tf2 | Créer l'interface de connexion avec comme noms de champs "username_co", "password_co" | HMFouad | DONE |
+| Tf3 | Créer l'interface de création d'un projet avec comme noms de champs "Name", "Description" | Annegn | DONE |
+| Tf4 | Créer l'interface de la liste des projets | Annegn | DONE |
+| Tf5 | Créer l'interface de base d'un projet | Annegn | DONE |
 | Tf6 | Créer l'interface d'invitation dans un projet avec comme nom de champ "username_inv" pour l'utilisateur à inviter | Dylan | TODO |
-| Ts1 | Récupérer et vérifier les données de l'inscription, puis les enregistrer dans la BD | HMFouad | TODO |
-| Ts2 | Récupérer les données de connexion pour les comparer à celles dans la BD | HMFouad | TODO |
-| Ts3 | Récupérer les données du nouveau projet, puis les enregistrer dans la BD | Annegn | TODO |
-| Ts4 | Récupérer les projets à lister de la BD, pour les envoyer au Front | Annegn | TODO |
+| Ts1 | Récupérer et vérifier les données de l'inscription, puis les enregistrer dans la BD | HMFouad | DOING |
+| Ts2 | Récupérer les données de connexion pour les comparer à celles dans la BD | HMFouad | DOING |
+| Ts3 | Récupérer les données du nouveau projet, puis les enregistrer dans la BD | Annegn | DONE |
+| Ts4 | Récupérer les projets à lister de la BD, pour les envoyer au Front | Dylan | TODO |
 | Ts5 | Récupérer les données de l'invitation à un projet, puis les enregistrer dans la BD | Dylan | TODO |
 | Tb1 | Créer la table "Users" avec les champs "id", "username" et "password" de la BDD pour l'inscription et la connexion | All | DONE |
 | Tb2 | Créer la table "Projects" avec les champs "id", "project" et "description" de la BDD pour la création d'un projet | All | DONE |
