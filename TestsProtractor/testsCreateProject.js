@@ -1,4 +1,4 @@
-describe('Tests for creating a project', function() {
+describe('[Test] Create a project', function() {
   let baseURL = "file:///home/gg099/Projects/cdp2017/Front/";
 	let path = "Index.html";
 
@@ -13,35 +13,35 @@ describe('Tests for creating a project', function() {
     projectDescrField.sendKeys(desc);
   }
 
-  it('Good way', function(){
+  it('on a good way', function(){
     browser.get(baseURL+path);
     fillFields('fooa', descr);
     createButton.click();
     //TODO check que le projet est créé
   });
 
-  it('Nothing', function(){
+  it('with nothing', function(){
     browser.get(baseURL+path);
     fillFields('', '');
     createButton.click();
     //TODO check que le projet est créé
   });
 
-  it('No name', function(){
+  it('without name', function(){
     browser.get(baseURL+path);
     fillFields('', descr);
     createButton.click();
     //TODO check que le projet n'est pas créé
   });
 
-  it('No description', function(){
+  it('without description', function(){
     browser.get(baseURL+path);
     fillFields('foob', '');
     createButton.click();
     //TODO check que le projet n'est pas créé
   });
 
-  it('Twice with same name', function(){
+  it('twice with same name', function(){
     let name = 'fooc';
     browser.get(baseURL+path);
     fillFields(name, descr);

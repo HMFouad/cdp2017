@@ -1,4 +1,4 @@
-describe('Tests for inviting another person into the project', function() {
+describe('[Test] Invite another person into a project', function() {
   let baseURL = "http://localhost:1337/";
 	let path = "";
 
@@ -28,21 +28,21 @@ describe('Tests for inviting another person into the project', function() {
 	element(by.id('projectDescription'));
 	element(by.id('create'));
 
-  it('Good way', function(){
+  it('on a good way', function(){
     browser.get(baseURL+path);
     usernameField.sendKeys(name);
     inviteButton.click();
     //TODO check que l'invitation est envoyée
   });
 
-  it('Nothing', function(){
+  it('with nothing', function(){
     browser.get(baseURL+path);
     usernameField.sendKeys('');
     inviteButton.click();
     //TODO check que l'invitation n'est pas envoyée
   });
 
-  it('Username not found', function(){
+  it('with an unfindable username', function(){
     browser.get(baseURL+path);
     usernameField.sendKeys('nvoqejrpngbjdfopqnbg');
     inviteButton.click();

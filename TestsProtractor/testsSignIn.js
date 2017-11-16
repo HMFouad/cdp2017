@@ -1,4 +1,4 @@
-describe('Tests for signing in', function() {
+describe('[Test] Sign in', function() {
   let baseURL = "http://localhost:1337/";
 	let path = "";
 
@@ -15,41 +15,41 @@ describe('Tests for signing in', function() {
     repeatPasswordField.sendKeys(repeatPwd);
   }
 
-  it('Good way', function(){
+  it('on a good way', function(){
     browser.get(baseURL+path);
     fillFields('fooa', pwd, pwd);
     signUpButton.click();
     //TODO check que l'inscription est faite
   });
 
-  it('Nothing filled', function(){
+  it('with nothing filled', function(){
     browser.get(baseURL+path);
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
-  it('No username', function(){
+  it('without username', function(){
     browser.get(baseURL+path);
     fillFields('foob', pwd, pwd);
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
-  it('No password', function(){
+  it('without password', function(){
     browser.get(baseURL+path);
     fillFields('fooc', '', pwd);
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
-  it('No repeat password', function(){
+  it('without repeat password', function(){
     browser.get(baseURL+path);
     fillFields('food', pwd, '');
     signUpButton.click();
     //TODO check que l'inscription n'est pas faite
   });
 
-  it('Twice with same username', function(){
+  it('twice with same username', function(){
     let name = 'fooe';
     browser.get(baseURL+path);
     fillFields(name, pwd, pwd);

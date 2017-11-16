@@ -1,4 +1,4 @@
-describe('Tests for loging in', function() {
+describe('[Test] Log in', function() {
   let baseURL = "http://localhost:1337/";
 	let path = "";
 
@@ -22,35 +22,35 @@ describe('Tests for loging in', function() {
 	element(by.id('rPassword_inscr')).sendKeys(pwd);
 	element(by.id('signUp')).click();
 
-  it('Good way', function(){
+  it('on a good way', function(){
     browser.get(baseURL+path);
     fillFields(username, pwd);
     logInButton.click();
     //TODO check que la connexion est faite
   });
 
-  it('Nothing', function(){
+  it('with nothing', function(){
     browser.get(baseURL+path);
     fillFields('', '');
     logInButton.click();
     //TODO check que la connexion n'est pas faite
   });
 
-  it('No username', function(){
+  it('without username', function(){
     browser.get(baseURL+path);
     fillFields('', pwd);
     logInButton.click();
     //TODO check que la connexion n'est pas faite
   });
 
-  it('No password', function(){
+  it('without password', function(){
     browser.get(baseURL+path);
     fillFields(username, '');
     logInButton.click();
     //TODO check que la connexion n'est pas faite
   });
 
-  it('Wrong password', function(){
+  it('with wrong password', function(){
     browser.get(baseURL+path);
     fillFields(username, wrongPwd);
     logInButton.click();
