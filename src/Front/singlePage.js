@@ -7,37 +7,31 @@
 
             // route for the home page
             .when('/', {
-                templateUrl : 'Front/home.html',
+                templateUrl : 'html_templates/home.html',
                 controller  : 'mainController'
             })
 
             // route for the about page
             .when('/about', {
-                templateUrl : 'Front/about.html',
+                templateUrl : 'html_templates/about.html',
                 controller  : 'aboutController'
-            })
-
-            // route for the contact page
-            .when('/contact', {
-                templateUrl : 'Front/contact.html',
-                controller  : 'contactController'
             })
 
             //route for the create project page
             .when('/createProject', {
-                templateUrl : 'Front/createProject.html',
+                templateUrl : 'html_templates/createProject.html',
                 controller  : 'createProjectController'
             })
 
             //route for the list of projects page
             .when('/listProjects', {
-                templateUrl : 'Front/listProjects.html',
+                templateUrl : 'html_templates/listProjects.html',
                 controller  : 'listProjectsController'
             })
 
             //route for the project page
             .when('/project', {
-                templateUrl : 'Front/project.html',
+                templateUrl : 'html_templates/project.html',
                 controller  : 'projectController'
             });
     });
@@ -48,10 +42,6 @@
     });
 
     App.controller('aboutController', function($scope) {
-
-    });
-
-    App.controller('contactController', function($scope) {
 
     });
 
