@@ -21,6 +21,24 @@
             .when('/contact', {
                 templateUrl : 'Front/contact.html',
                 controller  : 'contactController'
+            })
+
+            //route for the create project page
+            .when('/createProject', {
+                templateUrl : 'Front/createProject.html',
+                controller  : 'createProjectController'
+            })
+
+            //route for the list of projects page
+            .when('/listProjects', {
+                templateUrl : 'Front/listProjects.html',
+                controller  : 'listProjectsController'
+            })
+
+            //route for the project page
+            .when('/project', {
+                templateUrl : 'Front/project.html',
+                controller  : 'projectController'
             });
     });
 
@@ -34,5 +52,17 @@
     });
 
     App.controller('contactController', function($scope) {
+
+    });
+
+    App.controller('createProjectController', function($scope) {
+
+    });
+
+    App.controller('listProjectController', function($scope) {
+
+    });
+
+    App.controller('projectController', function($scope) {
 
     });

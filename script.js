@@ -54,12 +54,12 @@ else{
 });*/
 
 
-//get file Index.html
-app.get('/Index', function (req, res){
-  res.sendFile(path.join(__dirname+'/Index.html'));
+//get file index.html
+app.get('/index', function (req, res){
+  res.sendFile(path.join(__dirname+'/'));
 });
 //insert new user into the database
-app.post('/Index',urlencodedParser, function(req,res){
+app.post('/index',urlencodedParser, function(req,res){
       username=req.body.username;
       password=req.body.password;
       rpassword=req.body.rpassword;
@@ -80,6 +80,7 @@ app.post('/Index',urlencodedParser, function(req,res){
     connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,encrypt(password)], function(error, rows) {
       if(error){
       console.log(error);
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!");
       }
       else{
         console.log('Inscription done with success');
@@ -118,5 +119,5 @@ app.post('/createProject',urlencodedParser, function(req,res){
 });
 });
 
-app.listen('1337');
+app.listen('8080');
     //console.log('Server started on port 3000');
