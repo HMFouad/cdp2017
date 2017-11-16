@@ -2,9 +2,13 @@
   "name": "teamgghb",
   "version": "1.0.0",
   "description": "Conduite de Projet",
-  "main": "Front/myscript.js",
+  "main": "appOfGGHB",
   "scripts": {
     "test": "protractor src/testsE2E/protractor.conf.js"
+  },
+  "dependencies" : {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
   },
   "repository": {
     "type": "git",
@@ -12,7 +16,9 @@
   },
   "keywords": [
     "cdp",
-    "2017"
+    "2017",
+    "gghb",
+    "GGHB"
   ],
   "author": "GGHB",
   "license": "ISC",

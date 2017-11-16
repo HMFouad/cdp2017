@@ -17,7 +17,7 @@ function encrypt(text){
   crypted += cipher.final('hex');
   return crypted;
 }
- 
+
 function decrypt(text){
   var decipher = crypto.createDecipher(algorithm,pass)
   var dec = decipher.update(text,'hex','utf8')
@@ -32,7 +32,7 @@ var connection = mysql.createConnection({
     password : '',
     database : 'cdp'
 });
-connection.connect(function(error){
+/*connection.connect(function(error){
   if(!!error){
     console.log('Error');
 }
@@ -63,7 +63,7 @@ app.post('/index',urlencodedParser, function(req,res){
       username=req.body.username;
       password=req.body.password;
       rpassword=req.body.rpassword;
-  
+
   if (username == "") {
     console.log("Empty username!!!");
   }

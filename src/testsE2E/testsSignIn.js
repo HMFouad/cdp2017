@@ -1,5 +1,5 @@
 describe('[Test] Sign in', function() {
-  let baseURL = "http://localhost:1337/";
+  let baseURL = "http://localhost:8080/";
 	let path = "";
 
   let usernameField = element(by.id('username_inscr'));
