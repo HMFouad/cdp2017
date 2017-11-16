@@ -1,0 +1,13 @@
+
+footer{
+    padding-top: 100px;
+    text-align: center;
+}
+
+input[type="userame"], input[type="text"] {
+	width: 300px;
+}
+
+input[type="password"], input[type="pwd"] {
+	width: 300px;
+}
