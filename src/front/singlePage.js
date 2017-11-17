@@ -1,8 +1,8 @@
-    // create the module and name it scotchApp
-    var App = angular.module('MyApp', ['ngRoute']);
+   // create the module and name it scotchApp
+    var App = angular.module('MyApp', [ 'ngRoute' ]);
 
     // configure our routes
-    App.config(function($routeProvider) {
+    App.config(["$routeProvider", function($routeProvider) {
         $routeProvider
 
             // route for the home page
@@ -33,8 +33,12 @@
             .when('/project', {
                 templateUrl : 'html_templates/project.html',
                 controller  : 'projectController'
+            })
+            .otherwise({
+                redirectTo: '/',
+                controller  : 'mainController'
             });
-    });
+    }]);
 
     // create the controller and inject Angular's $scope
     App.controller('mainController', function($scope) {

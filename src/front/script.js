@@ -1,7 +1,8 @@
 const express = require('express');
 const mysql = require('mysql');
+
 var bodyParser = require('body-parser');
-var path    = require("path");
+var path    = require('path');
 var app=express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var name;
@@ -24,6 +25,7 @@ function decrypt(text){
   dec += decipher.final('utf8');
   return dec;
 }
+
 
 // Create connection
 var connection = mysql.createConnection({
@@ -55,11 +57,18 @@ else{
 
 
 //get file index.html
-app.get('/index', function (req, res){
-  res.sendFile(path.join(__dirname+'/'));
+app.get('/', function (req, res){
+  //res.sendFile(path.join(__dirname+'/'));
+  res.sendFile(__dirname+'/index.html');
 });
+
+
+  app.use(express.static(__dirname + '/css'));
+  app.use(express.static(__dirname));
+
+
 //insert new user into the database
-app.post('/index',urlencodedParser, function(req,res){
+app.post('/',urlencodedParser, function(req,res){
       username=req.body.username;
       password=req.body.password;
       rpassword=req.body.rpassword;
@@ -99,7 +108,7 @@ app.post('/index',urlencodedParser, function(req,res){
 
 //get file createProject.html
 app.get('/createProject', function (req, res){
-  res.sendFile(path.join(__dirname+'/createProject.html'));
+  res.sendFile(__dirname+'createProject');
 });
 //insert news projects created
 app.post('/createProject',urlencodedParser, function(req,res){
