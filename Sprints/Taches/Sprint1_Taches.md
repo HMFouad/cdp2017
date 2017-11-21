@@ -30,11 +30,9 @@ Tâches du Sprint 1
 | Tt2r | Rédiger le test E2E de la connexion (US#2) | ggamelas | TODO |
 | Tt3r | Rédiger le test E2E de la création d'un projet (US#3) | ggamelas | TODO |
 | Tt4r | Rédiger le test E2E du listage des projets (US#4) | ggamelas | TODO |
-| Tt5r | Rédiger le test E2E de la création de projet (US#5) | ggamelas | TODO |
-| Tt6r | Rédiger le test E2E d'invitation dans un projet (US#6) | ggamelas | TODO |
+| Tt5r | Rédiger le test E2E d'invitation dans un projet (US#5) | ggamelas | TODO |
 | Tt1e | Exécuter le test E2E de l'inscription (US#1) |  | TODO |
 | Tt2e | Exécuter le test E2E de la connexion (US#2) |  | TODO |
 | Tt3e | Exécuter le test E2E de la création d'un projet (US#3) |  | TODO |
 | Tt4e | Exécuter le test E2E du listage des projets (US#4) |  | TODO |
-| Tt5e | Exécuter le test E2E de la création de projet (US#5) |  | TODO |
-| Tt6e | Exécuter le test E2E d'invitation dans un projet (US#6) |  | TODO |
+| Tt5e | Exécuter le test E2E d'invitation dans un projet (US#5) |  | TODO |
