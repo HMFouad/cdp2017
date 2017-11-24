@@ -1,62 +1,69 @@
+var alertHandlerClass = require('./alertHandler.js');
+var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
+
 describe('[Test] Create a project', function() {
-  let baseURL = "http://localhost:8080/";
-	let path = "";
+  let baseURL = "http://localhost:8080/#/";
+	let path = "createProject";
 
-  let projectNameField = element(by.id('projectName'));
-	let projectDescrField = element(by.id('projectDescription'));
-	let createButton = element(by.id('create'));
-
-  let infoLabel = element(by.id('infoCreateProLabel'));
-  let stringDONE = "Project created.";
-  let stringPleaseFill = "Please, fill the name field.";
-  let stringWrongPwd = "Wrong password with this username";
+  let projectNameField;
+	let projectDescrField;
+	let createButton;
 
   let descr = 'Description d\'un projet foo';
+
+  let stringDONE = "Project created.";
+  let stringPleaseFill = "Please, fill the name field.";
 
   function fillFields(name, des){
     projectNameField.sendKeys(name);
     projectDescrField.sendKeys(descr);
   }
 
-  it('on a good way', function(){
+  beforeAll(() => {
     browser.get(baseURL+path);
+    projectNameField = element(by.id('projectName'));
+  	projectDescrField = element(by.id('projectDescription'));
+  	createButton = element(by.id('create'));
+  });
+
+  beforeEach(() => {
+    browser.get(baseURL+path);
+  });
+
+  it('on a good way', function(){
     fillFields('fooa', descr);
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringDONE);
+    alertHandler.expect(stringDONE);
   });
 
   it('with nothing', function(){
-    browser.get(baseURL+path);
     fillFields('', '');
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringPleaseFill);
+    alertHandler.expect(stringPleaseFill);
   });
 
   it('without name', function(){
-    browser.get(baseURL+path);
     fillFields('', descr);
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringPleaseFill);
+    alertHandler.expect(stringPleaseFill);
   });
 
   it('without description', function(){
-    browser.get(baseURL+path);
     fillFields('foob', '');
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringDONE);
+    alertHandler.expect(stringDONE);
   });
 
   it('twice with same name', function(){
     let name = 'fooc';
-    browser.get(baseURL+path);
     //1st
     fillFields(name, descr);
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringDONE);
+    alertHandler.expect(stringDONE);
     //2nd
     fillFields(name, descr);
     createButton.click();
-    expect(infoLabel.getText()).toEqual(stringDONE);
+    alertHandler.expect(stringDONE);
   });
 
 });
