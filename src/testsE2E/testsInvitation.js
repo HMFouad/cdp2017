@@ -37,7 +37,7 @@ describe('[Test] Invite another person into a project', function() {
 
   it('on a good way', function(){
     browser.get(baseURL+path);
-    usernameField.sendKeys(name);
+    usernameField.sendKeys(usernameInvited);
     inviteButton.click();
     expect(infoLabel.getText()).toEqual(stringDONE);
   });

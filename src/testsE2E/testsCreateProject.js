@@ -15,7 +15,7 @@ describe('[Test] Create a project', function() {
 
   function fillFields(name, des){
     projectNameField.sendKeys(name);
-    projectDescrField.sendKeys(desc);
+    projectDescrField.sendKeys(descr);
   }
 
   it('on a good way', function(){
@@ -51,11 +51,11 @@ describe('[Test] Create a project', function() {
     browser.get(baseURL+path);
     //1st
     fillFields(name, descr);
-    signUpButton.click();
+    createButton.click();
     expect(infoLabel.getText()).toEqual(stringDONE);
     //2nd
     fillFields(name, descr);
-    signUpButton.click();
+    createButton.click();
     expect(infoLabel.getText()).toEqual(stringDONE);
   });
 

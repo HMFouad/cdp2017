@@ -6,6 +6,7 @@ describe('[Test] Log in', function() {
 	let passwordField = element(by.id('password_co'));
 	let logInButton = element(by.id('logIn'));
 
+  let usernameCoLabel = element(by.id('usernameCoLabel'));
   let infoLabel = element(by.id('infoLogLabel'));
   let stringPleaseFill = "Please, fill all fields.";
   let stringWrongPwd = "Wrong password with this username";
