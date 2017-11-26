@@ -1,12 +1,23 @@
 const express = require('express');
-const mysql = require('mysql');
-
 var bodyParser = require('body-parser');
+
+
 var path    = require('path');
 var app=express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var name;
 var description;
+
+var authenticateController=require('./controllers/authenticate-controller');
+var registerController=require('./controllers/register-controller');
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+/* route to handle login and registration */
+app.post('/register',registerController.register);
+app.post('/login',authenticateController.authenticate);
+
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
     pass = 'd6F3Efeq';
@@ -27,83 +38,14 @@ function decrypt(text){
 }
 
 
-// Create connection
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'cdp'
-});
-connection.connect(function(error){
-  if(!!error){
-    console.log('Error');
-}
-else {
-  console.log('Connected');
-}
-});
-
-/*app.get('/',function(req, resp) {
-connection.query ("SELECT * FROM users", function(error ,rows ,fields){
-if(!!error){
-  console.log("Error in the query");
-}
-else{
-  console.log('succesful');
-  console.log(rows);
-}
-});
-});*/
-
-
 //get file index.html
 app.get('/', function (req, res){
-  //res.sendFile(path.join(__dirname+'/'));
   res.sendFile(__dirname+'/index.html');
 });
 
 
   app.use(express.static(__dirname + '/css'));
   app.use(express.static(__dirname));
-
-
-//insert new user into the database
-app.post('/',urlencodedParser, function(req,res){
-      username=req.body.username;
-      password=req.body.password;
-      rpassword=req.body.rpassword;
-  
-  if (username == "") {
-    console.log("Empty username!!!");
-  }
-
-  else if (password == "") {
-    console.log("Empty password!!!");
-  }
-
-  else if (password == rpassword){
-
-    console.log(username);
-
-    res.send( req.body);
-    connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,encrypt(password)], function(error, rows) {
-      if(error){
-      console.log(error);
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!");
-      }
-      else{
-        console.log('Inscription done with success');
-        console.log(rows);
-      }
-
-});
-}
-  else{
-        console.log("password not match!!!");
-      }
-
-
-});
 
 
 //get file createProject.html
@@ -129,4 +71,3 @@ app.post('/createProject',urlencodedParser, function(req,res){
 });
 
 app.listen('8080');
-    //console.log('Server started on port 3000');
