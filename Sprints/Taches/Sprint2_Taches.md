@@ -9,11 +9,11 @@ Tâches du Sprint 2
 | Tsb1 | Définir les tables et les champs de la BDD pour les users stories | All | DONE |
 | Tsb2 | Définir les tables et les champs de la BDD pour les sprints| All | DONE |
 | Tf1 | Créer l'interface de création/modification d'une user story avec comme ids de champs "usDescription", "usDifficulty", "usState" | Annegn | DOING |
-| Tf2 | Créer l'interface de création/modification d'un sprint avec comme ids de champs "sprintNum", "sprintDateBegin", "sprintDateEnd" |  | TODO |
+| Tf2 | Créer l'interface de création/modification d'un sprint avec comme ids de champs "sprintNum", "sprintDateBegin", "sprintDateEnd" | HMFouad | DOING |
 | Tf3 | Créer l'interface de gestion des user stories d'un sprint |  | TODO |
 | Tf4 | Ajouter le champ d'id "usPriority" à l'interface de création/modification des user stories uniquement pour le Product Owner |  | TODO |
 | Ts1 | Récupérer les données de la création d'une user story, puis les enregistrer dans la BD | Annegn | DOING |
-| Ts2 | Récupérer les données de la création d'un sprint, puis les enregistrer dans la BD |  | TODO |
+| Ts2 | Récupérer les données de la création d'un sprint, puis les enregistrer dans la BD | HMFouad | DOING |
 | Ts3 | Récupérer la priorité donnée par le Product Owner d'une user story, puis l'enregistrer dans la BD |  | TODO |
 | Tb1 | Créer la table "sprints" avec les champs "id", "date_begin", "date_end", "project_id" de la BDD | All | DONE |
 | Tb2 | Créer la table "us" avec les champs "id", "description", "priority", "difficult", "state", "project_id" de la BDD | All | DONE |
