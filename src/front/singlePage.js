@@ -60,3 +60,6 @@
     App.controller('projectController', function($scope) {
 
     });
+
+
+    module.exports = App;

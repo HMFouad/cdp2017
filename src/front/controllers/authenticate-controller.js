@@ -2,6 +2,16 @@ var connection = require('./../config');
 module.exports.authenticate=function(req,res){
     var username_co=req.body.username_co;
     var password_co=req.body.password_co;
+    var message;
+
+    /*var App = angular.module('MyApp', [ 'ngRoute' ]);
+    App.module('windowExample', [])
+    .controller('loginController', ['$scope', '$window', function($scope, $window) {
+      $scope.message = 'Hello, World!';
+      $scope.alert = function(message) {
+        $window.alert(message);
+      };
+    }]);*/
 
 
     connection.query('SELECT * FROM users WHERE username = ?',[username_co], function (error, results, fields) {
@@ -17,13 +27,16 @@ module.exports.authenticate=function(req,res){
                     status:true,
                     message:'successfully authenticated'
                 })*/
-                window.location.replace="http://localhost:8080/#/listProjects"
+                message='successfully authenticated';
+                console.log(message);             
 
             }else{
-                res.json({
+                /*res.json({                   
                   status:false,
                   message:"Username and password does not match"
-                 });
+                 });*/
+                 message= "Username and password does not match";
+                 console.log(message); 
             }
          
         }
