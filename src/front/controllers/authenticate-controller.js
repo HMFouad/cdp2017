@@ -23,20 +23,20 @@ module.exports.authenticate=function(req,res){
       }else{
         if(results.length >0){
             if(password_co==results[0].password){
-               /*res.json({
+                message='successfully authenticated';
+                console.log(message);  
+                res.json({
                     status:true,
                     message:'successfully authenticated'
-                })*/
-                message='successfully authenticated';
-                console.log(message);             
+                })         
 
             }else{
-                /*res.json({                   
-                  status:false,
-                  message:"Username and password does not match"
-                 });*/
                  message= "Username and password does not match";
                  console.log(message); 
+                 res.json({                   
+                  status:false,
+                  message:"Username and password does not match"
+                 });
             }
          
         }
