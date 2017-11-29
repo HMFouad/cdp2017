@@ -14,7 +14,7 @@ module.exports.authenticate=function(req,res){
     }]);*/
 
 
-    connection.query('SELECT * FROM users WHERE username = ?',[username_co], function (error, results, fields) {
+    connection.query('SELECT * FROM Users WHERE username = ?',[username_co], function (error, results, fields) {
       if (error) {
           res.json({
             status:false,

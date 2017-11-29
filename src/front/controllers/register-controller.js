@@ -18,7 +18,7 @@ module.exports.register=function(req,res){
     
       else if (password == rpassword){
     
-    connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,crypt.encrypt(password)], function(error, results, fields){
+    connection.query('INSERT INTO Users(username, password) VALUES (?,?)',[username,crypt.encrypt(password)], function(error, results, fields){
         if(error){
         res.json({
             status:false,
