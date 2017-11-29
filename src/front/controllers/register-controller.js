@@ -1,5 +1,8 @@
 var connection = require('./../config');
+var crypt = require('../crypt')
 module.exports.register=function(req,res){
+
+    var crypt = require('../crypt');
 
     username=req.body.username;
     password=req.body.password;
@@ -15,7 +18,7 @@ module.exports.register=function(req,res){
     
       else if (password == rpassword){
     
-    connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,password], function(error, results, fields){
+    connection.query('INSERT INTO users(username, password) VALUES (?,?)',[username,crypt.encrypt(password)], function(error, results, fields){
         if(error){
         res.json({
             status:false,
