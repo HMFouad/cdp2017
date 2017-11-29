@@ -34,6 +34,11 @@
                 templateUrl : 'html_templates/project.html',
                 controller  : 'projectController'
             })
+            //route for the sprint page
+            .when('/sprint', {
+                templateUrl : 'html_templates/sprint.html',
+                //controller  : 'projectController'
+            })
             .otherwise({
                 redirectTo: '/',
                 controller  : 'mainController'
