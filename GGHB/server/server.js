@@ -23,7 +23,11 @@ app.use(session({secret: 'teamGGHB'}));
 
 /* route to handle login and registration */
 app.post('/register',registerController.register);
-app.post('/login',authenticateController.authenticate);
+//app.post('/login',authenticateController.authenticate);
+app.post('/login', function(req, res) {
+    console.log("Login posted");
+});
+
 
 //get file index.html
 app.get('/', function (req, res){
@@ -31,10 +35,10 @@ app.get('/', function (req, res){
 
 });
 
-
+/*
   app.use(express.static(__dirname + '/css'));
   app.use(express.static(__dirname));
-
+*/
 
   /*app.get('/',function(req,res){
     
@@ -49,4 +53,4 @@ app.get('/', function (req, res){
     });*/
 
 
-app.listen('8080');
+app.listen('4200');

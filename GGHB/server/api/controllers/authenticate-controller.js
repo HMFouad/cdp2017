@@ -1,5 +1,5 @@
 var connection = require('./../config');
-var server = require('./../server')
+var server = require('./../../server')
 var session = server.session;
 var app = server.app;
 
@@ -60,7 +60,7 @@ module.exports.authenticate=function(req,res){
                     }
                 });
 
-            app.get('/listProjects',function(req,res){
+            /*app.get('/listProjects',function(req,res){
                     
                       if(req.session.username_co) {
                           res.write('<h1>Hello '+req.session.username_co+'</h1>');
@@ -92,7 +92,7 @@ module.exports.authenticate=function(req,res){
                 }
                 else {
                     res.render('index.html');
-            }
+            }*/
 
 
                 /*app.get('/listProjects', isLoggedIn, function(req, res) {
