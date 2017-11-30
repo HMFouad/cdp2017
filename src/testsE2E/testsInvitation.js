@@ -2,8 +2,9 @@ var alertHandlerClass = require('./alertHandler.js');
 var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 
 describe('[Test] Invite another person into a project', function() {
-  let baseURL = "http://localhost:8080/";
-	let path = "";
+  let baseURL = "http://localhost:8080/#/";
+  let projectName = 'projectOfFoos';
+	let path = projectOfFoos;
 
   let usernameField = element(by.id('username_inv'));
 	let inviteButton = element(by.id('invite'));
@@ -16,7 +17,6 @@ describe('[Test] Invite another person into a project', function() {
   let usernameWhoInvite = 'fooWhoInvite';
   let usernameInvited = 'fooInvited';
   let pwd = '123456789';
-  let projectName = 'projectOfFoos';
 
   beforeAll(() => {
     browser.get(baseURL);
@@ -51,7 +51,7 @@ describe('[Test] Invite another person into a project', function() {
   it('with nothing', function(){
     usernameField.sendKeys('');
     inviteButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('with an unfindable username', function(){

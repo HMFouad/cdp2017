@@ -2,8 +2,9 @@ var alertHandlerClass = require('./alertHandler.js');
 var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 
 describe('[Test] Log in', function() {
-  let baseURL = "http://localhost:8080/";
+  let baseURL = "http://localhost:8080/#/";
 	let path = "";
+	let pathWhenComplete = "listProjects";
 
   let usernameField = element(by.id('username_co'));
 	let passwordField = element(by.id('password_co'));
@@ -38,30 +39,36 @@ describe('[Test] Log in', function() {
   it('on a good way', function(){
     fillFields(username, pwd);
     logInButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
     expect(usernameCoLabel.getText()).toEqual(username);
   });
 
   it('with nothing', function(){
     fillFields('', '');
     logInButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
+    expect(usernameCoLabel.getText()).toEqual('');
   });
 
   it('without username', function(){
     fillFields('', pwd);
     logInButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
+    expect(usernameCoLabel.getText()).toEqual('');
   });
 
   it('without password', function(){
     fillFields(username, '');
     logInButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
+    expect(usernameCoLabel.getText()).toEqual('');
   });
 
   it('with wrong password', function(){
     fillFields(username, wrongPwd);
     logInButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
+    expect(usernameCoLabel.getText()).toEqual('');
     alertHandler.expect(stringWrongPwd);
   });
 

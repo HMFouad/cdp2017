@@ -1,6 +1,6 @@
-describe('[Test] Create a project', function() {
-  let baseURL = "http://localhost:8080/";
-	let path = "";
+describe('[Test] Lists projects', function() {
+  let baseURL = "http://localhost:8080/#/";
+	let path = "listProjects";
 
   let projectsList = element(by.id('projectsList'));
 
