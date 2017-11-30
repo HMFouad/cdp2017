@@ -4,6 +4,7 @@ var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 describe('[Test] Create a project', function() {
   let baseURL = "http://localhost:8080/#/";
 	let path = "createProject";
+	let pathWhenComplete = "listProjects";
 
   let projectNameField;
 	let projectDescrField;
@@ -33,25 +34,25 @@ describe('[Test] Create a project', function() {
   it('on a good way', function(){
     fillFields('fooa', descr);
     createButton.click();
-    alertHandler.expect(stringDONE);
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
   it('with nothing', function(){
     fillFields('', '');
     createButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without name', function(){
     fillFields('', descr);
     createButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without description', function(){
     fillFields('foob', '');
     createButton.click();
-    alertHandler.expect(stringDONE);
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
   it('twice with same name', function(){
@@ -59,11 +60,12 @@ describe('[Test] Create a project', function() {
     //1st
     fillFields(name, descr);
     createButton.click();
-    alertHandler.expect(stringDONE);
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
     //2nd
+    browser.get(baseURL+path);
     fillFields(name, descr);
     createButton.click();
-    alertHandler.expect(stringDONE);
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
 });

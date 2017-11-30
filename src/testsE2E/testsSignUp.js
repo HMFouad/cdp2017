@@ -30,30 +30,31 @@ describe('[Test] Sign up', function() {
   it('on a good way', function(){
     fillFields('fooa', pwd, pwd);
     signUpButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
     alertHandler.expect(stringDONE);
   });
 
   it('with nothing filled', function(){
     signUpButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without username', function(){
     fillFields('foob', pwd, pwd);
     signUpButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without password', function(){
     fillFields('fooc', '', '');
     signUpButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without repeat password', function(){
     fillFields('food', pwd, '');
     signUpButton.click();
-    alertHandler.expect(stringPwdNotMatching);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('twice with same username', function(){
@@ -61,10 +62,12 @@ describe('[Test] Sign up', function() {
     //1st
     fillFields(name, pwd, pwd);
     signUpButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
     alertHandler.expect(stringDONE);
     //2nd
     fillFields(name, pwd, pwd);
     signUpButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
     alertHandler.expect(stringNameAlreadyUsed);
   });
 });

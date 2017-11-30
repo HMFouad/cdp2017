@@ -51,7 +51,7 @@ describe('[Test] Invite another person into a project', function() {
   it('with nothing', function(){
     usernameField.sendKeys('');
     inviteButton.click();
-    alertHandler.expect(stringPleaseFill);
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('with an unfindable username', function(){
