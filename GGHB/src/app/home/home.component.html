@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
+  <div class="container" ng-app="myApp">
     <div class="navbar-header">
       <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
           <span class="icon-bar"></span>
@@ -25,15 +25,15 @@
 
   <ul class="navbar-text navbar-right">
 
-    <form class="form-inline" action="/login" method="POST">
-      <div class="form-group">
+    <form class="form-inline" action="http://localhost:3000/login" method="POST">
+      <div class="form-group" ng-controller="myCtrl">
         <label>UserName:</label>
-        <input type="text" ng-model="username" placeholder="Enter your UserName" class="form-control" name="username_co">
+        <input type="text" ng-model="username_co" placeholder="Enter your UserName" class="form-control" name="username_co">
 
         <label>Password:</label>
-        <input type="password" ng-model="password" placeholder="Enter your password" class="form-control" name="password_co">
+        <input type="password" ng-model="password_co" placeholder="Enter your password" class="form-control" name="password_co">
       
-      <button ng-click="login()" type="submit" class="btn btn-default">Sign In</button>
+      <button ng-click="login" class="btn btn-primary">Sign In</button>
       </div>
     </form> 
   </ul>
@@ -42,7 +42,7 @@
 </nav>
 
 
-<form class="signUp" action="/register" method="POST">
+<form class="signUp" action="http://localhost:3000/register" method="POST">
   <div class="container1" align="Center">
     
       <br/><br/><br/>
