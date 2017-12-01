@@ -11,7 +11,7 @@ module.exports.createProject=function(req,res){
         
       else{
     
-      connection.query('INSERT INTO projects(project, description) VALUES (?,?)',[name,description], function(error, rows){
+      connection.query('INSERT INTO projects(project, description) VALUES (?,?)',[name,description], function(error, results, fields){
         if(error){
         res.json({
             status:false,

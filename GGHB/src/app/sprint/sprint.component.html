@@ -42,21 +42,17 @@
   <br/><br/><br/>
   <br/><br/>
   
-  <form class="sprint" action="/addSprint" method="POST">
+  <form class="sprint" action="http://localhost:3000/addSprint" method="POST">
     <div class="container" align="Center">
         <h2>Create a Sprint</h2>
   
-      <div class="form-group">
-       <label for="sprintNumber">Sprint number:</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter the sprint number" required>
+    <div class="form-group">
+      <label for="ProjectDescription">Date begin</label>
+      <input type="date" name="date_begin">
     </div>
     <div class="form-group">
       <label for="ProjectDescription">Date begin</label>
-      <input type="date" name="dateBegin">
-    </div>
-    <div class="form-group">
-      <label for="ProjectDescription">Date begin</label>
-      <input type="date" name="dateEnd">
+      <input type="date" name="date_end">
     </div>
         <button type="submit" class="btn btn-default"> Save</button>
       <button type="reset" class="btn btn-default">Reset</button>

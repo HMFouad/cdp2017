@@ -16,21 +16,16 @@ module.exports.authenticate=function(req,res){
             })
       }else{
         if(results.length >0){
-            if(password_co==results[0].password){
-                //res.sendFile(/list-projects');
-
-                
+            if(password_co==results[0].password){             
                 message='successfully authenticated';
-                console.log(message);  
+                req.session.username = req.body.username_co;
+                req.session.password = req.body.password_co;
                 res.json({
                     status:true,
-                    message:'successfully authenticated'
-                })      
-
-                req.session.username_co = req.body.username_co;
-                req.session.password_co = req.body.password_co;
-                
-
+                    message:'successfully authenticated',
+                    
+                })
+                res.isAuthenticated;
             }else{
                  message= "Username and password does not match";
                  console.log(message); 
@@ -50,14 +45,13 @@ module.exports.authenticate=function(req,res){
       }
     });
 
-    function isLoggedIn(req, res, next) {
-        
-            // if user is authenticated in the session, carry on
-            if (req.isAuthenticated())
-                return next();
-        
-            // if they aren't redirect them to the home page
-            res.redirect('/');
+    module.exports.checkAuthentication = function (req,res,next){
+        if(req.isAuthenticated()){
+            //if user is looged in, req.isAuthenticated() will return true 
+            next();
+        } else{
+            res.redirect("/login");
         }
+    }
 
 }

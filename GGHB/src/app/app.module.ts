@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ListProjectsComponent } from './list-projects/list-projects.component';
-import {CreateUsComponent } from './create-us/create-us.component';
+import {CreateUsComponent } from './createUs/create-us.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectComponent } from './project/project.component';
 import { SprintComponent } from './sprint/sprint.component';
@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'listProjects', component: ListProjectsComponent},
   {path: 'createProject', component: CreateProjectComponent},
-   {path: 'createUs', component: CreateUsComponent},
+  {path: 'createUs', component: CreateUsComponent},
   {path: 'project', component: ProjectComponent},
   {path: 'sprint', component: SprintComponent},
   {path: '', redirectTo: '/home', pathMatch:'full'},
