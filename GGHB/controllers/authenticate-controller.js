@@ -17,6 +17,9 @@ module.exports.authenticate=function(req,res){
       }else{
         if(results.length >0){
             if(password_co==results[0].password){
+                //res.sendFile(/list-projects');
+
+                
                 message='successfully authenticated';
                 console.log(message);  
                 res.json({
@@ -26,7 +29,7 @@ module.exports.authenticate=function(req,res){
 
                 req.session.username_co = req.body.username_co;
                 req.session.password_co = req.body.password_co;
-
+                
 
             }else{
                  message= "Username and password does not match";

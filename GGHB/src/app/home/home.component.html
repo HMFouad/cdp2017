@@ -28,10 +28,10 @@
     <form class="form-inline" action="http://localhost:3000/login" method="POST">
       <div class="form-group" ng-controller="myCtrl">
         <label>UserName:</label>
-        <input type="text" ng-model="username_co" placeholder="Enter your UserName" class="form-control" name="username_co">
+        <input type="text" ng-model="username_co" placeholder="Enter your UserName" class="form-control" name="username_co" required>
 
         <label>Password:</label>
-        <input type="password" ng-model="password_co" placeholder="Enter your password" class="form-control" name="password_co">
+        <input type="password" ng-model="password_co" placeholder="Enter your password" class="form-control" name="password_co" required>
       
       <button ng-click="login" class="btn btn-primary">Sign In</button>
       </div>
@@ -50,20 +50,20 @@
         <h2>Create an account</h2>
         <div class="form-group">
           <label for="UserName">User Name:</label>
-          <input type="text" placeholder="Enter UserName" class="form-control" name="username">
+          <input type="text" placeholder="Enter UserName" class="form-control" name="username" required>
         </div>
   
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" placeholder="Enter Password" class="form-control" name="password">
+          <input type="password" placeholder="Enter Password" class="form-control" name="password" required>
         </div>
   
         <div class="form-group">
           <label for="confirmPassword">Repeat Password:</label>
-          <input type="password" placeholder="Repeat Password" class="form-control" name="rpassword">
+          <input type="password" placeholder="Repeat Password" class="form-control" name="rpassword" required>
         </div>
     
-        <button ng-click="register()" type="submit" class="btn btn-default">Sign up</button>
+        <button ng-click="register" type="submit" class="btn btn-default">Sign up</button>
         <button type="reset" class="btn btn-default">Reset</button>
   </div>
 </form>
