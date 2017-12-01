@@ -4,16 +4,23 @@ language: node_js
 node_js:
   - "node"
 
-services:
-  - mysql
+#services: mysql
 
-before_script:
+before_install:
   # install chrome
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+
+install:
   # install protractor
   - npm install selenium-server-standalone-jar@3.7.1
-  - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./TestsProtractor/
+  - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./src/testsE2E/
   - npm install protractor
-  - webdriver-manager update
+  # other installs
+  - npm install express
+  - npm install mysql
+
+before_script:
+  - webdriver-manager update --gecko false
+  - node src/front/script.js &
