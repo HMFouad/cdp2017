@@ -13,6 +13,9 @@ var description;
 
 var authenticateController=require('./controllers/authenticate-controller');
 var registerController=require('./controllers/register-controller');
+var createProject=require('./controllers/createProject');
+var createUs=require('./controllers/createUs');
+var createSprint=require('./controllers/createSprint');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -26,6 +29,13 @@ app.get('/', function (req, res){
   res.sendFile(__dirname+'home');
 
 });
+
+//insert news projects created
+app.post('/createProject',createProject.createProject);
+//insert new us
+app.post('/createUs',createUs.createUs);
+//insert new sprint
+app.post('/createSprint',createSprint.createSprint);
 
 
 app.listen('3000');
