@@ -1,54 +1,71 @@
+var alertHandlerClass = require('./alertHandler.js');
+var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
+
 describe('[Test] Create a project', function() {
-  let baseURL = "file:///home/gg099/Projects/cdp2017/Front/";
-	let path = "Index.html";
+  let baseURL = "http://localhost:4200/";
+	let path = "createProject";
+	let pathWhenComplete = "listProjects";
 
-  let projectNameField = element(by.id('projectName'));
-	let projectDescrField = element(by.id('projectDescription'));
-	let createButton = element(by.id('create'));
+  let projectNameField;
+	let projectDescrField;
+	let createButton;
 
-  let descr = 'Description d\'un projet foo'
+  let descr = 'Description d\'un projet foo';
+
+  let stringDONE = "Project created.";
+  let stringPleaseFill = "Please, fill the name field.";
 
   function fillFields(name, des){
     projectNameField.sendKeys(name);
-    projectDescrField.sendKeys(desc);
+    projectDescrField.sendKeys(descr);
   }
 
-  it('on a good way', function(){
+  beforeAll(() => {
     browser.get(baseURL+path);
+    projectNameField = element(by.id('projectName'));
+  	projectDescrField = element(by.id('projectDescription'));
+  	createButton = element(by.id('create'));
+  });
+
+  beforeEach(() => {
+    browser.get(baseURL+path);
+  });
+
+  it('on a good way', function(){
     fillFields('fooa', descr);
     createButton.click();
-    //TODO check que le projet est créé
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
   it('with nothing', function(){
-    browser.get(baseURL+path);
     fillFields('', '');
     createButton.click();
-    //TODO check que le projet est créé
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without name', function(){
-    browser.get(baseURL+path);
     fillFields('', descr);
     createButton.click();
-    //TODO check que le projet n'est pas créé
+    expect(browser.getCurrentUrl()).toBe(baseURL+path);
   });
 
   it('without description', function(){
-    browser.get(baseURL+path);
     fillFields('foob', '');
     createButton.click();
-    //TODO check que le projet n'est pas créé
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
   it('twice with same name', function(){
     let name = 'fooc';
+    //1st
+    fillFields(name, descr);
+    createButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
+    //2nd
     browser.get(baseURL+path);
     fillFields(name, descr);
-    signUpButton.click();
-    fillFields(name, descr);
-    signUpButton.click();
-    //TODO check que les 2 projets sont créés
+    createButton.click();
+    expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
   });
 
 });
