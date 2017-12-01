@@ -2,7 +2,7 @@ var alertHandlerClass = require('./alertHandler.js');
 var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 
 describe('[Test] Create a project', function() {
-  let baseURL = "http://localhost:8080/#/";
+  let baseURL = "http://localhost:4200/";
 	let path = "createProject";
 	let pathWhenComplete = "listProjects";
 

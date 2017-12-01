@@ -1,5 +1,5 @@
 describe('[Test] Lists projects', function() {
-  let baseURL = "http://localhost:8080/#/";
+  let baseURL = "http://localhost:4200/";
 	let path = "listProjects";
 
   let projectsList = element(by.id('projectsList'));

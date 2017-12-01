@@ -4,9 +4,9 @@
   "license": "GNU General Public License",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js & ;; ng serve &",
     "build": "ng build",
-    "test": "ng test",
+    "test": "protractor testsE2E/protractor.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
