@@ -1,10 +1,9 @@
 addons:
   chrome: stable
 language: node_js
-node_js:
-  - "node"
+node_js: "node"
 
-#services: mysql
+services: mysql
 
 before_install:
   # install chrome
@@ -24,4 +23,3 @@ install:
 before_script:
   - webdriver-manager update --gecko false
   - npm start
-#  - node src/front/script.js &
