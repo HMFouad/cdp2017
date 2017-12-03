@@ -17,7 +17,6 @@ install:
   # install protractor
   - npm install selenium-server-standalone-jar@3.7.1
   - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./testsE2E/
-  - npm install protractor
   # other installs
   - npm install
 
