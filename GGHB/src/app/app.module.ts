@@ -10,6 +10,9 @@ import {CreateUsComponent } from './createUs/create-us.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectComponent } from './project/project.component';
 import { SprintComponent } from './sprint/sprint.component';
+import { InviteProjectComponent } from './invite-project/invite-project.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -19,6 +22,7 @@ const appRoutes: Routes = [
   {path: 'createUs', component: CreateUsComponent},
   {path: 'project', component: ProjectComponent},
   {path: 'sprint', component: SprintComponent},
+  {path: 'inviteProject', component: InviteProjectComponent},
   {path: '', redirectTo: '/home', pathMatch:'full'},
   {path: '**', redirectTo: '/home', pathMatch:'full'}
 ]
@@ -33,7 +37,8 @@ const appRoutes: Routes = [
     CreateProjectComponent,
     CreateUsComponent,
     ProjectComponent,
-    SprintComponent
+    SprintComponent,
+    InviteProjectComponent,
   ],
   imports: [
     BrowserModule,
