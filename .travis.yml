@@ -1,26 +1,26 @@
 addons:
   chrome: stable
 language: node_js
-node_js:
-  - "node"
+node_js: "node"
 
-#services: mysql
+services: mysql
 
 before_install:
+  - mysql -u root -e 'CREATE DATABASE cdp;'
   # install chrome
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
 install:
+  - cd GGHB
   # install protractor
   - npm install selenium-server-standalone-jar@3.7.1
-  - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./src/testsE2E/
+  - mv ./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.7.1.jar ./testsE2E/
   - npm install protractor
   # other installs
-  - npm install express
-  - npm install mysql
+  - npm install
 
 before_script:
   - webdriver-manager update --gecko false
-  - node src/front/script.js &
+  - npm start
