@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <a class="navbar-brand">Team GGHB</a>
+      </div>
+      <div class="navbar-collapse collapse">
+  
+        <ul class="navbar-nav nav">
+  
+          <li class='active' >
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+  
+          <li >
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+  
+      </ul>
+  
+      <ul class="navbar-text navbar-right">
+        
+            <form class="form-inline" action="/logout" method="POST">
+              <div class="form-group">
+                <label>UserName</label>
+              
+              <button ng-click="logout()" type="submit" class="btn btn-default">Sign out</button>
+              </div>
+            </form> 
+          </ul>
+  
+    </div>
+    </div>
+    </nav>
+    
+  <br/><br/><br/>
+  <br/><br/><br/>
+  <br/><br/>
+  
+  <div class="container" align="Left">
+   <form class="cproject" action="http://localhost:3000/createProject" method="POST">
+    <div class="form-group">
+      <label for="projectName">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter the name of project" required>
+    </div>
+    <div class="form-group">
+      <label for="ProjectDescription">Description</label>
+      <textarea class="form-control" name="description"  rows="3" placeholder="Enter a short desciption of your project" required></textarea>
+    </div>
+        <button type="submit" class="btn btn-default"> Save</button>
+      <button type="reset" class="btn btn-default">Reset</button>
+  </form>
+  </div>
