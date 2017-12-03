@@ -1,30 +1,30 @@
 <br/><br/><br/>
 <br/><br/><br/>
 <br/><br/>
-<form class="signUp" action="/index" method="POST">
+<form class="signUp" action="/" method="POST">
 <div class="container" align="Center">
-  
+
     <br/><br/><br/>
-    
+
       <h2>Create an account</h2>
       <div class="form-group">
         <label for="UserName">User Name:</label>
-        <input type="text" placeholder="Enter UserName" class="form-control" name="username">
+        <input type="text" placeholder="Enter UserName" class="form-control" id="username_inscr">
       </div>
 
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" placeholder="Enter Password" class="form-control" name="password">
+        <input type="password" placeholder="Enter Password" class="form-control" id="password_inscr">
       </div>
 
       <div class="form-group">
         <label for="confirmPassword">Repeat Password:</label>
-        <input type="password" placeholder="Repeat Password" class="form-control" name="rpassword">
+        <input type="password" placeholder="Repeat Password" class="form-control" id="rPassword_inscr">
       </div>
 
       <p>By creating an account you agree to our Terms & Privacy</a>.</p>
 
-      <button ng-click="register()" type="submit" class="btn btn-default">Sign up</button>
+      <button ng-click="register()" type="submit" class="btn btn-default" id="signUp">Sign up</button>
       <button type="reset" class="btn btn-default">Reset</button>
 </div>
 </form>
