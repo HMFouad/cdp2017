@@ -18,6 +18,7 @@ var registerController=require('./controllers/register-controller');
 var createProject=require('./controllers/createProject');
 var createUs=require('./controllers/createUs');
 var createSprint=require('./controllers/createSprint');
+var inviteProject = require('./controllers/inviteProject');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -38,6 +39,10 @@ app.post('/createProject',createProject.createProject);
 app.post('/createUs',createUs.createUs);
 //create new sprint
 app.post('/addSprint',createSprint.createSprint);
+
+//invite an user to a project
+app.post('/invited', inviteProject.inviteProject);
+
 
 //app.get('/', function (req, res){
   //res.sendFile(__dirname+'home');

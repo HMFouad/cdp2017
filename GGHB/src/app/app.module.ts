@@ -11,8 +11,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { ProjectComponent } from './project/project.component';
 import { SprintComponent } from './sprint/sprint.component';
 import { InviteProjectComponent } from './invite-project/invite-project.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
