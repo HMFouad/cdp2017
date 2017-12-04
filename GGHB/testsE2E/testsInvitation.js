@@ -4,7 +4,7 @@ var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 describe('[Test] Invite another person into a project', function() {
   let baseURL = "http://localhost:4200/";
   let projectName = 'projectOfFoos';
-	let path = projectOfFoos;
+	let path = projectName;
 
   let usernameField = element(by.id('username_inv'));
 	let inviteButton = element(by.id('invite'));
