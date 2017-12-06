@@ -1,11 +1,11 @@
 FROM node:latest
 
-COPY . /cdp2017
+WORKDIR /home/node/app/
 
-RUN cd cdp2017 && npm install
-RUN ls
-RUN echo $USER
+COPY ./GGHB/ /home/node/app
 
-EXPOSE 8080
+RUN npm install
+
+EXPOSE 4200
 
 CMD [ "npm", "start" ]
