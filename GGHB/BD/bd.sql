@@ -29,6 +29,7 @@ CREATE TABLE Us (
        difficult INT,
        state ENUM('Todo', 'Done'),
        project_id INT,
+       auth_token VARCHAR,
        FOREIGN KEY (project_id) REFERENCES Projects(id),
        PRIMARY KEY (id)
 );
@@ -54,5 +55,9 @@ CREATE TABLE Tasks (
        PRIMARY KEY (id)
 );
 
-
-
+CREATE TABLE Tokens (
+       id INT NOT NULL AUTO_INCREMENT,
+       value VARCHAR(20) UNIQUE NOT NULL,
+       expire_at DATE,
+       PRIMARY KEY (id)
+);

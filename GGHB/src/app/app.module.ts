@@ -1,30 +1,15 @@
+import { AppRoutingModule } from './app-routing.modules';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpModule} from '@angular/http';
-import {RouterModule, Routes} from '@angular/router';
-import { AppComponent } from './app.component';
+import { ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+
+import { AppComponent } from './app/app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ListProjectsComponent } from './list-projects/list-projects.component';
-import {CreateUsComponent } from './createUs/create-us.component';
-import { CreateProjectComponent } from './create-project/create-project.component';
-import { ProjectComponent } from './project/project.component';
-import { SprintComponent } from './sprint/sprint.component';
-import { InviteProjectComponent } from './invite-project/invite-project.component';
-
-
-const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'listProjects', component: ListProjectsComponent},
-  {path: 'createProject', component: CreateProjectComponent},
-  {path: 'createUs', component: CreateUsComponent},
-  {path: 'project', component: ProjectComponent},
-  {path: 'sprint', component: SprintComponent},
-  {path: 'inviteProject', component: InviteProjectComponent},
-  {path: '', redirectTo: '/home', pathMatch:'full'},
-  {path: '**', redirectTo: '/home', pathMatch:'full'}
-]
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -32,17 +17,14 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ListProjectsComponent,
-    CreateProjectComponent,
-    CreateUsComponent,
-    ProjectComponent,
-    SprintComponent,
-    InviteProjectComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
