@@ -10,50 +10,58 @@
         <a class="navbar-brand">Team GGHB</a>
       </div>
       <div class="navbar-collapse collapse">
-  
+
         <ul class="navbar-nav nav">
-  
+
           <li class='active' >
             <a class="nav-link" routerLink="/home">Home</a>
           </li>
-  
+
           <li >
             <a class="nav-link" routerLink="/about">About</a>
           </li>
-  
+
       </ul>
-  
+
       <ul class="navbar-text navbar-right">
-        
+
             <form class="form-inline" action="/logout" method="POST">
               <div class="form-group">
                 <label>UserName</label>
-              
+
               <button ng-click="logout()" type="submit" class="btn btn-default">Sign out</button>
               </div>
-            </form> 
+            </form>
           </ul>
-  
+
     </div>
     </div>
     </nav>
-    
+
   <br/><br/><br/>
   <br/><br/><br/>
   <br/><br/>
-  
+
   <form class="sprint" action="http://localhost:3000/addSprint" method="POST">
     <div class="container" align="Center">
         <h2>Create a Sprint</h2>
-  
+
     <div class="form-group">
-      <label for="ProjectDescription">Date begin</label>
+      <label for="DateBegin">Sprint's start date</label>
       <input type="date" name="date_begin">
     </div>
     <div class="form-group">
-      <label for="ProjectDescription">Date begin</label>
+      <label for="DateEnd">Sprint's end date</label>
       <input type="date" name="date_end">
     </div>
+      <div class="form-group">
+        <label for="NameProject">Name of the Sprint:</label>
+        <input type="text" class="form-control" name="sprint_name">
+      </div>
+      <div class="form-group">
+        <label for="NameProject">Project:</label>
+        <input type="text" class="form-control" name="project">
+      </div>
         <button type="submit" class="btn btn-default"> Save</button>
       <button type="reset" class="btn btn-default">Reset</button>
       </div>
