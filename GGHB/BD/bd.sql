@@ -35,7 +35,7 @@ CREATE TABLE Us (
 
 CREATE TABLE Sprints (
        id INT NOT NULL AUTO_INCREMENT,
-       nb INT,
+       sprint_name VARCHAR(100),
        date_begin DATE,
        date_end DATE,
        project_id INT,
