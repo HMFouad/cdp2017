@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
 
   public ngOnInit(): void {
   this.loginForm = new FormGroup({
-      userName: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+      'userName': new FormControl('', [Validators.required]),
+      'password': new FormControl('', [Validators.required]),
   });
 }
 
@@ -31,6 +31,7 @@ public get password () {
 }
 
 public submitLoginForm () {
+    console.log ('Test0!!!!!!!!!!!!!!!!!');
           if (this.loginForm.valid) {
               this.httpClient.post(
                   '/api/login',
