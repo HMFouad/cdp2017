@@ -24,7 +24,7 @@ function createToken (handleCreation) {
     });
 }
 // Sign in service
-router.post("/tokens", (req, res) => {
+router.post("/login", (req, res) => {
     console.log("Service POST /tokens");
     //const user = new User();
     var username_co = req.body.userName;

@@ -1,12 +1,13 @@
+import { AuthGuard } from './../../server/services/authGuard';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-//import {AuthGuard} from './guards/auth.guard';
+import { ListProjectsComponent } from './listProjects/listProjects.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  //{path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'listProjects', component: ListProjectsComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];

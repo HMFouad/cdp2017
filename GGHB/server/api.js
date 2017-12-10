@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const addUser = require('./services/addUser');
-const tokens = require('./services/tokens');
+const login = require('./services/tokens');
 
 router.use('/', addUser);
-router.use('/', tokens);
+router.use('/', login);
 
 module.exports = router;

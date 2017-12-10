@@ -17,9 +17,9 @@
             novalidate
             [formGroup]="loginForm">
           <div class="form-group">
-              <div *ngIf="userNameFormControl.invalid && userNameFormControl.touched"
+              <div *ngIf="userName.invalid && userName.touched"
                    class="text-danger">
-                  <div *ngIf="userNameFormControl.errors.required">
+                  <div *ngIf="userName.errors.required">
                       userName is required for connexion!
                   </div>
               </div>

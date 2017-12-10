@@ -17,15 +17,23 @@ export class HeaderComponent implements OnInit {
 
   public ngOnInit(): void {
   this.loginForm = new FormGroup({
-      'userName': new FormControl('', [Validators.required, Validators.email]),
-      'password': new FormControl('', [Validators.required]),
+      userName: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
   });
+}
+
+public get userName () {
+    return this.loginForm.get('userName');
+}
+
+public get password () {
+  return this.loginForm.get('password');
 }
 
 public submitLoginForm () {
           if (this.loginForm.valid) {
               this.httpClient.post(
-                  '/api/tokens',
+                  '/api/login',
                   this.loginForm.value, {
                       responseType: 'json'
                   }).subscribe((response) => { // success
@@ -37,12 +45,4 @@ public submitLoginForm () {
               });
           }
       }
-public get userNameFormControl () {
-    return this.loginForm.get('userName');
-}
-
-public get passwordFormControl () {
-  return this.loginForm.get('password');
-}
-
 }

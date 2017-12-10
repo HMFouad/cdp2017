@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListProjectsComponent } from './listProjects/listProjects.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { ProjectComponent } from './project/project.component';
+import { CreateSprintComponent } from './create-sprint/create-sprint.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     AboutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ListProjectsComponent,
+    CreateProjectComponent,
+    ProjectComponent,
+    CreateSprintComponent
   ],
   imports: [
     BrowserModule,

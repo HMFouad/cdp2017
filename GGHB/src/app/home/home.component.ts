@@ -13,8 +13,6 @@ export class HomeComponent implements OnInit {
 
   private signUpForm: FormGroup;
 
-  private specialities: any;
-
   public constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
