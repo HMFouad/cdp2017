@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /home/node/app/
 
-COPY ./GGHB/ /home/node/app
+COPY ./GGHB/ /home/node/app/
 
 RUN npm install
 
