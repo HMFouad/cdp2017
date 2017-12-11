@@ -1,3 +1,57 @@
-<p>
-  create-project works!
-</p>
+<div class="container py-3">
+  <div class="row">
+      <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="card card-body">
+              <h3 class="text-center mb-4">Create a project</h3>
+              <form class="formGroup"
+                    novalidate
+                    [formGroup]="createProjectForm">
+                  <div class="form-group">
+                      <div class="form-group">
+                          <input type="text"
+                                 name="projectName"
+                                 id="projectName"
+                                 class="form-control"
+                                 placeholder="Project  Name"
+                                 formControlName="projectName"/>
+                      </div>
+                      <div *ngIf="projectName.invalid && projectName.touched"
+                           class="text-danger">
+                          <div *ngIf="projectName.errors.required">
+                              Project Name is required
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                    <textarea
+                     name="description"
+                      id="projectDescription"
+                      rows="3"
+                      placeholder="Enter a short desciption of your project"
+                      formControlName="projectDescription" >
+                    </textarea>
+                  </div>
+
+
+
+
+                  <div align="center">
+                      <button class="btn btn-success"
+                              type="submit"
+                              name="createProject"
+                              (click)="submitcreateProjectForm()">
+                          Sign Up
+                      </button>
+                      <button class="btn btn-danger"
+                              type="reset"
+                              name="reset"
+                              (click)="reset()">
+                          Reset
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
