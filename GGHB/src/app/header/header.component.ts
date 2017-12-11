@@ -40,7 +40,7 @@ public submitLoginForm () {
                   }).subscribe((response) => { // success
                   console.log (response);
                   // TODO Save token dans le localStorage ?
-                  this.router.navigate(['about']);
+                  this.router.navigate(['listProjects']);
               }, (error) => { // error
                   console.log (error);
               });

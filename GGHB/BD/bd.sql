@@ -5,6 +5,7 @@ CREATE TABLE Users (
        id INT NOT NULL AUTO_INCREMENT,
        username VARCHAR(20) UNIQUE NOT NULL,
        password VARCHAR(20) NOT NULL,
+       authToken VARCHAR,
        PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 

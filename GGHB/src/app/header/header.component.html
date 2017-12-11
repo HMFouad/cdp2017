@@ -20,7 +20,7 @@
               <div *ngIf="userName.invalid && userName.touched"
                    class="text-danger">
                   <div *ngIf="userName.errors.required">
-                      userName is required for connexion!
+                      UserName is required for connexion!
                   </div>
               </div>
               <label >User Name : </label>
@@ -30,11 +30,16 @@
                      formControlName="userName"/>
           </div>
           <div class="form-group">
+            <div *ngIf="password.invalid && password.touched"
+                class="text-danger">
+                <div *ngIf="password.errors.required">
+                    Password is required for connexion!
+                </div>
+           </div>
               <label>Password : </label>
               <input type="password"
                      placeholder="Enter your password"
-                     class="form-control"
-                     name="password"
+                     class="form-control" name="password"
                      formControlName="password"/>
           </div>
           <button (click)="submitLoginForm()" class="btn btn-primary">Sign In</button>

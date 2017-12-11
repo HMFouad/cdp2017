@@ -8,11 +8,9 @@ const db_connexion = require('./../../bd/bd_connexion');
 /**
  * @param {function(string)} handleCreation Function which handle the new token
  */
-function createToken (handleCreation) {
-    const newToken = jwt.sign('grr', secretcode.SECRET_CODE);
-    console.log('New token: ' + newToken.tokenValue);
-    console.log('New token: ' + newToken.expiresAt);
-    db_connexion.query('SELECT * FROM users WHERE authToken = ?',[newToken], function (err, user) {
+function createToken(handleCreation) {
+    const newToken = jwt.sign('GGHB', secretcode.SECRET_CODE);
+    db_connexion.query('SELECT * FROM users WHERE authToken = ?', [newToken], function (err, user) {
         if (err) {
             console.log('Error creation token');
             // TODO handle
@@ -23,9 +21,10 @@ function createToken (handleCreation) {
             console.log('creation token');
         }*/
         else {
-            handleCreation (newToken);
+            handleCreation(newToken);
         }
     });
+
 }
 // Sign in service
 router.post('/login', (req, res) => {
@@ -36,83 +35,72 @@ router.post('/login', (req, res) => {
     console.log("Password for connexion: " + password_co);
     if (username_co === null || password_co === null) {
         res
-        .json({ success: false, message: "Missing userName or password" });
+            .json({ success: false, message: "Missing userName or password" });
     }
     else {
         // TODO encrypt password 
 
-        db_connexion.query('SELECT * FROM users WHERE username = ?',[username_co], function (error, user, fields) {
+        db_connexion.query('SELECT * FROM users WHERE username = ?', [username_co], function (error, user, fields) {
             if (error) {
                 console.log("query select user: error");
                 res
-                .json({ success: false, message: "Invalid login or password" });
-            }
-            
-            //console.log(token.value);
-            //token.expiresAt = tokendelay;
-           // checkToken(user, token);
-            
+                    .json({ success: false, message: "Invalid login or password" });
+            } else if (password_co == user[0].password) {
 
-            console.log("query select user: ok");
+                console.log("query select user: ok");
 
-            createToken((tokenValue) => {
-                console.log('Create token');
-                const date = new Date ();
+                createToken((tokenValue) => {
+                    console.log('Create token');
+                    const date = new Date();
 
-                // one second in milliseconds
-                const oneSecond = 1000;
+                    // one second in milliseconds
+                    const oneSecond = 1000;
 
-                const expiresAt = new Date (date.getTime() + tokendelay.TOKEN_DELAY * oneSecond);
+                    const expiresAt = new Date(date.getTime() + tokendelay.TOKEN_DELAY * oneSecond);
 
-                console.log('TokenValue   :   ' + tokenValue);
-                console.log('Tokendelai   :   ' + expiresAt);
+                    console.log('TokenValue   :   ' + tokenValue);
+                    console.log('Tokendelai   :   ' + expiresAt);
 
-                db_connexion.query('INSERT INTO tokens(value, expire_at) VALUES (?,?)',[tokenValue,expiresAt], function(error, results, fields){
-                    if(error){
-                    res.json({
-                        status:false,
-                        message:'there are some error with tokens query'
-                    })
-                  }else{
-                      res.json({
-                        status:true,
-                        data:results,
-                        message:'Token created with success'
-                    })
-
-                        // user.authToken = ...
-                  }
-                });
-
-                res
-                    //.status(statuscode.SUCCESS)
-                    .json({
-                        success: true,
-                        message: "SUCCESS",
-                        //authtoken: user.authtoken,
-                        //user: user._id
+                    db_connexion.query('INSERT INTO tokens(id, value, expire_at) VALUES (?,?,?)', [user[0].id, tokenValue, expiresAt], function (error, results, fields) {
+                        if (error) {
+                            res.json({
+                                status: false,
+                                message: 'there are some error with tokens query'
+                            })
+                        } else {
+                            //var tokenId = results.id;
+                            console.log("token added to table tokens");
+                            res.json({
+                                status: true,
+                                data: results,
+                                message: 'Token created with success'
+                            });
+                        }
                     });
 
-            });
+                    //Add token to users table
+                    db_connexion.query('UPDATE users SET authToken = ? WHERE username = ?', [tokenValue, username_co], function (error, res) {
+                        if (error) {
+                            console.log("Error insertion token to table users ");
+                        } else {
+                            console.log("Token added to table users ");
+                        }
+                    })
+
+                });
+
+
+            } else {
+                console.log("Username and password does not match");
+            }
         });
 
-        console.log("Test       3 ");
-        //console.log("Token  :   " + newToken);
-        var sql = "UPDATE users SET authToken = 'tokenValue' WHERE username = 'username_co'";
-        db_connexion.query(sql, function(err, result){
-            if(err){
-                console.log("Test       4 ");
 
-              }else{
-                console.log("Test       5 ");
-
-        }
-        })
 
     }
 });
 
 // Sign in service
-router.delete("/login", (req, res) => {});
+router.delete("/login", (req, res) => { });
 
 module.exports = router;

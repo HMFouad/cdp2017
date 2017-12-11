@@ -7,10 +7,9 @@ const bd_connexion = require ('./../../bd/bd_connexion');
 // Registration service
 router.post('/addUser', (req, res) => {
 
-    console.log('File AddUser!!!!!!!!!!!!');
-    console.log('UserName   :   ' + req.body.userName);
-    console.log('Password   :   ' + req.body.password);
-    bd_connexion.query('INSERT INTO users(username, password) VALUES (?,?)',[req.body.userName,req.body.password], function(error, results, fields){
+    const userName = req.body.userName;
+    const password = crypt.encrypt(req.body.password);
+    bd_connexion.query('INSERT INTO users(username, password) VALUES (?,?)',[userName,password], function(error, results, fields){
         if(error){
         res.json({
             status:false,
