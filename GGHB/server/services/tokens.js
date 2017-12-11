@@ -4,6 +4,7 @@ const tokendelay = require("./tokens/token_config");
 const secretcode = require("./tokens/secret_code");
 const jwt = require("jsonwebtoken");
 const db_connexion = require('./../../bd/bd_connexion');
+const crypt = require('./encrypt');
 
 /**
  * @param {function(string)} handleCreation Function which handle the new token
@@ -30,7 +31,7 @@ function createToken(handleCreation) {
 router.post('/login', (req, res) => {
     console.log("Service POST /login");
     var username_co = req.body.userName;
-    var password_co = req.body.password;
+    var password_co = crypt.encrypt(req.body.password);
     console.log("userName for connexton: " + username_co);
     console.log("Password for connexion: " + password_co);
     if (username_co === null || password_co === null) {

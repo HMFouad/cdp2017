@@ -1,64 +1,51 @@
 CREATE DATABASE IF NOT EXISTS `cdp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE cdp;
 
-CREATE TABLE Users (
-       id INT NOT NULL AUTO_INCREMENT,
-       username VARCHAR(20) UNIQUE NOT NULL,
-       password VARCHAR(20) NOT NULL,
-       authToken VARCHAR,
-       PRIMARY KEY (id)
-) ENGINE=InnoDB;
+CREATE TABLE `acl` (
+  `user_id` int(11) DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Projects (
-       id INT NOT NULL AUTO_INCREMENT,
-       project VARCHAR(30) UNIQUE NOT NULL,
-       description VARCHAR(100),
-       PRIMARY KEY (id)
-);
+CREATE TABLE `projects` (
+  `id` int(11) NOT NULL,
+  `project` varchar(30) NOT NULL,
+  `description` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Acl (
-       user_id INT,
-       project_id INT,
-       FOREIGN KEY (user_id) REFERENCES Users(id),
-       FOREIGN KEY (project_id) REFERENCES Projects(id)
-);
+CREATE TABLE `sprints` (
+  `id` int(11) NOT NULL,
+  `nb` int(11) NOT NULL,
+  `date_begin` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Us (
-       id INT NOT NULL AUTO_INCREMENT,
-       description VARCHAR(100),
-       priority INT,
-       difficult INT,
-       state ENUM('Todo', 'Done'),
-       project_id INT,
-       auth_token VARCHAR,
-       FOREIGN KEY (project_id) REFERENCES Projects(id),
-       PRIMARY KEY (id)
-);
+CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  `state` enum('Todo','Doing','Done') DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `sprint_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Sprints (
-       id INT NOT NULL AUTO_INCREMENT,
-       nb INT,
-       date_begin DATE,
-       date_end DATE,
-       project_id INT,
-       FOREIGN KEY (project_id) REFERENCES Projects(id),
-       PRIMARY KEY (id)
-);
+CREATE TABLE `tokens` (
+  `id` int(11) NOT NULL,
+  `value` varchar(400) NOT NULL,
+  `expire_at` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Tasks (
-       id INT NOT NULL AUTO_INCREMENT,
-       description VARCHAR(100),
-       state ENUM('Todo', 'Doing', 'Done'),
-       user_id INT,
-       sprint_id INT,
-       FOREIGN KEY (user_id) REFERENCES Users(id),
-       FOREIGN KEY (sprint_id) REFERENCES Sprints(id),
-       PRIMARY KEY (id)
-);
+CREATE TABLE `us` (
+  `id` int(11) NOT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  `priority` int(11) DEFAULT NULL,
+  `difficult` int(11) DEFAULT NULL,
+  `state` enum('Todo','Done') DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE Tokens (
-       id INT NOT NULL AUTO_INCREMENT,
-       value VARCHAR(20) UNIQUE NOT NULL,
-       expire_at DATE,
-       PRIMARY KEY (id)
-);
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `authToken` varchar(400) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
