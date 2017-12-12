@@ -32,13 +32,13 @@ export class HeaderComponent implements OnInit {
     }
 
     public submitLoginForm() {
-        console.log('Test0!!!!!!!!!!!!!!!!!');
         if (this.loginForm.valid) {
             this.httpClient.post(
                 '/api/login',
                 this.loginForm.value, {
                     responseType: 'json'
                 }).subscribe((response) => { // success
+                    localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
                     console.log(response);
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
