@@ -11,16 +11,17 @@ const crypt = require('./encrypt');
  */
 function createToken(handleCreation) {
     const newToken = jwt.sign(Math.random(), secretcode.SECRET_CODE);
-    db_connexion.query('SELECT * FROM users WHERE authToken = ?', [newToken], function (err, user) {
+    console.log('token   :   ' + newToken);
+    db_connexion.query('SELECT * FROM tokens WHERE value = ?', [newToken], function (err, token) {
         if (err) {
             console.log('Error creation token');
             // TODO handle
         }
 
-        /*if (user) {
+        else if (token.data>0) {
             createToken(handleCreation);
             console.log('creation token');
-        }*/
+        } 
         else {
             handleCreation(newToken);
         }
