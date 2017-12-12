@@ -1,8 +1,8 @@
 var alertHandlerClass = require('./alertHandler.js');
 var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
+var baseURL = require('./baseURL.js');
 
 describe('[Test] Invite another person into a project', function() {
-  let baseURL = "http://localhost:4200/";
   let projectName = 'projectOfFoos';
 	let path = projectName;
 
