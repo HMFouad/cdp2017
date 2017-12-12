@@ -16,13 +16,27 @@ router.post('/addUser', (req, res) => {
             message:'there are some error with query'
         })
       }else{
-          res.json({
-            status:true,
-            data:results,
-            message:'Inscription done with success'
-        })
+        res.send(JSON.stringify({
+        result:results
+      }));
       }
     });
 });
+
+//insert into acl
+
+/*router.post('/createProject/:id_project', (req, res) => {
+	res.contentType('application/json');
+  bd_connexion.query('INSERT INTO acl(user_id, project_id) VALUES (?,?)',	[req.body.user_id, req.params.id_project], (error,results) => {
+if (error)
+				sendError(res, 'sorry!!');
+			else {
+        res.send(JSON.stringify({
+        result:results
+      }));
+			}
+		});
+
+});*/
 
 module.exports = router;
