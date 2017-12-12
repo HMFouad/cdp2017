@@ -11,46 +11,37 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class CreateTaskComponent implements OnInit {
 
-
-    private createUsForm: FormGroup;
+    private createTaskForm: FormGroup;
 
     public constructor(private httpClient: HttpClient) {}
 
     ngOnInit(): void {
-      this.createUsForm = new FormGroup({
+      this.createTaskForm = new FormGroup({
             taskDescription: new FormControl('', [Validators.required]),
               taskState: new FormControl('', [Validators.required]),
               taskUser: new FormControl('', [Validators.required]),
             });
     }
+    public get taskDescription () {
+      return this.createTaskForm.get('taskDescription');
+    }
 
+    public get taskState () {
+      return this.createTaskForm.get('taskState');
+    }
+    public get taskUser () {
+      return this.createTaskForm.get('taskUser');
+    }
 
-}
-  /*public get usDescription () {
-    return this.createUsForm.get('usDescription');
-  }
+    public submitCreateTaskForm () {
 
-  public get usDifficult () {
-    return this.createUsForm.get('usDifficult');
-  }
-  public get usPriority () {
-    return this.createUsForm.get('usPriority');
-  }
-  public get usState () {
-    return this.createUsForm.get('usState');
-  }
-
-
-
-    public submitCreateUsForm () {
-
-      const body = this.createUsForm.value;
-      body.sprint_id = '';
-      alert(body.project_id);
-       if (this.createUsForm.valid) {
+      const body = this.createTaskForm.value;
+      body.sprint_id = 1;
+      //alert(body.sprint_id);
+       if (this.createTaskForm.valid) {
           this.httpClient.post(
-            '/api/createUs',
-            this.createUsForm.value, {
+            '/api/createTask',
+            this.createTaskForm.value, {
                   responseType: 'json'
               }).subscribe((response) => { // success
               console.log (response);
@@ -60,4 +51,5 @@ export class CreateTaskComponent implements OnInit {
        }else {console.log ('Not Valid');
       }
     }
-*/
+
+}

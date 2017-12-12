@@ -1,3 +1,72 @@
-<p>
-  create-task works!
-</p>
+<div class="container py-3">
+  <div class="row">
+      <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="card card-body">
+              <h3 class="text-center mb-4">Create a Task</h3>
+              <form class="formGroup"
+                    novalidate
+                    [formGroup]="createTaskForm">
+                  <div class="form-group">
+
+                    <div class="form-group">
+                      <textarea
+                       name="taskDescription"
+                        id="taskDescription"
+                        rows="3"
+                        placeholder="Enter a desciption of your task"
+                        formControlName="taskDescription" >
+                      </textarea>
+                    </div>
+                    <div *ngIf="taskDescription.invalid && taskDescription.touched"
+                         class="text-danger">
+                        <div *ngIf="taskDescription.errors.required">
+                            Description of task is required
+                        </div>
+                    </div>
+                  </div>
+
+
+
+              <div class="form-group">
+              <select class="form-control"
+               name="taskState"
+               id="taskState"
+               placeholder="Choose a State"
+                formControlName="taskState">
+                <option value="todo">TODO</option>
+                <option value="doing">DOING</option>
+                <option value="done">DONE</option>
+                </select>
+            </div>
+
+
+                          <div class="form-group">
+                          <select class="form-control"
+                           name="taskUser"
+                           id="taskUser"
+                           placeholder="Choose a State"
+                            formControlName="taskUser">
+                            <option>3</option>
+                            </select>
+                        </div>
+
+
+                <div align="center">
+                      <button class="btn btn-primary btn-sm"
+                              type="submit"
+                              name="createTask"
+                              (click)="submitCreateTaskForm()">
+                          Create Project
+                      </button>
+                      <button class="btn btn-secondary btn-sm"
+                              type="reset"
+                              name="reset"
+                              (click)="reset()">
+                          Reset
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

@@ -38,12 +38,15 @@ export class CreateUsComponent implements OnInit {
     return this.createUsForm.get('usState');
   }
 
-
+public chooseUSer(){
+//  this.httpClient.get()
+}
 
     public submitCreateUsForm () {
 
       const body = this.createUsForm.value;
       body.project_id = 3;
+    //  body.project_id = JSON.parse(localStorage.getItem('currentProject'))['0'].id});
       alert(body.project_id);
        if (this.createUsForm.valid) {
           this.httpClient.post(

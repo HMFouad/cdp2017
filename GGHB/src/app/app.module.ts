@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { Http, RequestOptions, URLSearchParams, ResponseContentType } from '@angular/http';
+
 
 
 import { AppComponent } from './app/app.component';
@@ -34,6 +37,7 @@ import { CreateUsComponent } from './create-us/create-us.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule
