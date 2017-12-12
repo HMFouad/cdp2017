@@ -6,6 +6,6 @@ const createProject = require('./services/createProject');
 
 router.use('/', addUser);
 router.use('/', login);
-router.use('/createProject', createProject);
+router.use('/', createProject);
 
 module.exports = router;

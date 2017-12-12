@@ -28,7 +28,7 @@ export class CreateProjectComponent implements OnInit {
     return this.createProjectForm.get('projectDescription');
   }
 
-  public submitScreateProjectForm () {
+  public submitCreateProjectForm () {
  console.log ('Test0!!!!!!!!!!!!!!!!!');
      if (this.createProjectForm.valid) {
         this.httpClient.post(

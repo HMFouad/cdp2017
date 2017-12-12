@@ -49,3 +49,13 @@ CREATE TABLE `users` (
   `password` varchar(20) NOT NULL,
   `authToken` varchar(400) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
