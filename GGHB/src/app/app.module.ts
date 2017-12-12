@@ -14,6 +14,8 @@ import { ListProjectsComponent } from './listProjects/listProjects.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectComponent } from './project/project.component';
 import { CreateSprintComponent } from './create-sprint/create-sprint.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
+import { CreateUsComponent } from './create-us/create-us.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { CreateSprintComponent } from './create-sprint/create-sprint.component';
     ListProjectsComponent,
     CreateProjectComponent,
     ProjectComponent,
-    CreateSprintComponent
+    CreateSprintComponent,
+    CreateTaskComponent,
+    CreateUsComponent
   ],
   imports: [
     BrowserModule,
