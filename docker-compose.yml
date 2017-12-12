@@ -1,0 +1,18 @@
+version: '2'
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  angular:
+    container_name: front
+    build: GGHB/
+
+  node:
+    container_name: server
+    build: GGHB/server/
+
+  mysql:
+    container_name: bd
+    image: mysql
