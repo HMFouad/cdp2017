@@ -8,32 +8,22 @@ router.post('/createSprint', (req, res) => {
   const dateBegin = req.body.dateBegin;
 const dateEnd = req.body.dateEnd;
 const sprintName = req.body.sprintName;
+const projectName = req.body.projectName;
+const nbSprint = req.body.nbSprint;
 
-connection.query('SELECT id FROM `Projects` WHERE project=?', req.body.projectName, function (error, results) {
-    if (error) {
-      throw error;
-    }
-    else {
-      const project_id = results[0].id;
-      bd_connexion.query('INSERT INTO Sprints(sprint_name, date_begin, date_end, project_id) VALUES (?, ?, ?, ?)', [sprintName, dateBegin, dateEnd, project_id], function (error, results, fields) {
-        if (error) {
-          res.json({
-            status: false,
-            message: 'there are some error with query'
-          })
-        }
-        else {
-          res.json({
-            status: true,
-            data: results,
-            message: 'Sprint added with success'
-          })
-        }
-      });
-    }
+bd_connexion.query('SELECT id FROM `projects` WHERE project=?', projectName, function (error, results) {
+  if (error) {
+    throw error;
   }
-);
-})
-;
-
+  else {
+    const projectId = results[0].id;
+    bd_connexion.query('INSERT INTO sprints(nb, date_begin, ' +
+      'date_end, project_id, sprint_name) VALUES (?, ?, ?, ?, ?)', [nbSprint, dateBegin, dateEnd, projectId, sprintName], function (error, results, fields) {
+      if (error) {
+        throw error;
+      }
+    });
+  }
+});
+});
 module.exports = router;

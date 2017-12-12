@@ -31,33 +31,42 @@
         </div>
         <div class="form-group">
           <div class="form-group">
+            <input type="number"
+                   name="nbSprint"
+                   id="nbSprint"
+                   class="form-control"
+                   placeholder="Nb Sprint"
+                   formControlName="nbSprint"/>
+          </div>
+          <div *ngIf="sprintName.touched"
+               class="text-danger">
+            An integer is required
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group">
             <input type="date"
-                   name="date_begin"
-                   id="date_begin"
+                   name="dateBegin"
+                   id="dateBegin"
                    class="form-control"
                    placeholder="Begin Date"
-                   formControlName="date_begin"/>
-          </div>
-          <div *ngIf="dateBegin.invalid && dateBegin.touched"
-               class="text-danger">
-            Begin Date is required
+                   formControlName="dateBegin"/>
           </div>
           <div class="form-group">
             <div class="form-group">
               <input type="date"
-                     name="date_end"
-                     id="date_end"
+                     name="dateEnd"
+                     id="dateEnd"
                      class="form-control"
                      placeholder="End Date"
-                     formControlName="date_end"/>
-            </div>
-            <div *ngIf="dateEnd.invalid && dateEnd.touched"
-                 class="text-danger">
-              End Date is required
+                     formControlName="dateEnd"/>
             </div>
             <button type="submit" class="btn btn-default" (click)="submitCreateSprintForm()"> Save</button>
             <button type="reset" class="btn btn-default">Reset</button>
           </div>
+        </div>
+      </div>
+    </div>
   </form>
 </div>
 

@@ -20,11 +20,17 @@ export class CreateSprintComponent implements OnInit {
       sprintName: new FormControl('', [Validators.required]),
       dateBegin: new FormControl('', [Validators.required]),
       dateEnd: new FormControl('', [Validators.required]),
+      projectName: new FormControl('', [Validators.required]),
+      nbSprint: new FormControl('', [Validators.required]),
     });
   }
 
   public get sprintName() {
     return this.createSprintForm.get('sprintName');
+  }
+
+  public get projectName() {
+    return this.createSprintForm.get('projectName');
   }
 
   public submitCreateSprintForm() {
