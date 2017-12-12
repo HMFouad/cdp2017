@@ -29,18 +29,19 @@ export class CreateProjectComponent implements OnInit {
   }
 
   public submitCreateProjectForm () {
- console.log ('Test0!!!!!!!!!!!!!!!!!');
+    const body = this.createProjectForm.value;
+    body.user_id = localStorage.getItem('users.id');
+    alert(body.user_id);
+  //  alert(body.user_id);
      if (this.createProjectForm.valid) {
         this.httpClient.post(
           '/api/createProject',
           this.createProjectForm.value, {
                 responseType: 'json'
             }).subscribe((response) => { // success
-              console.log ('Réponse!!!!!!!!!!!!!!!!!');
-              console.log (response);
+            console.log (response);
         }, (error) => { // error
-            console.log ('Erreur!!!!!!!!!!!!!!!!!');
-            console.log (error);
+          console.log (error);
         });
      }else {console.log ('Not Valid');
     }
