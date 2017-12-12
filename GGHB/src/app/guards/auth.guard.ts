@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
             localStorage.removeItem(AppConstants.AUTH_TOKEN_VALUE_NAME);
             localStorage.removeItem(AppConstants.AUTH_TOKEN_EXPIRATION_NAME);
             localStorage.removeItem(AppConstants.USER_ID_NAME);
-            this.router.navigate(['registration']);
+            this.router.navigate(['home']);
         }
 
         return res;

@@ -1,49 +1,62 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {AppConstants} from './../app-constants';
 
 @Component({
-  selector: 'gghb-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'gghb-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  private loginForm;
+    private loginForm;
 
-  public constructor(private httpClient: HttpClient,
-                     private router: Router) {}
+    public constructor(private httpClient: HttpClient,
+        private router: Router) { }
 
-  public ngOnInit(): void {
-  this.loginForm = new FormGroup({
-      'userName': new FormControl('', [Validators.required]),
-      'password': new FormControl('', [Validators.required]),
-  });
-}
+    public ngOnInit(): void {
+        this.loginForm = new FormGroup({
+            'userName': new FormControl('', [Validators.required]),
+            'password': new FormControl('', [Validators.required]),
+        });
+    }
 
-public get userName () {
-    return this.loginForm.get('userName');
-}
+    public get userName() {
+        return this.loginForm.get('userName');
+    }
 
-public get password () {
-  return this.loginForm.get('password');
-}
+    public get password() {
+        return this.loginForm.get('password');
+    }
 
-public submitLoginForm () {
-    console.log ('Test0!!!!!!!!!!!!!!!!!');
-          if (this.loginForm.valid) {
-              this.httpClient.post(
-                  '/api/login',
-                  this.loginForm.value, {
-                      responseType: 'json'
-                  }).subscribe((response) => { // success
-                  console.log (response);
-                  // TODO Save token dans le localStorage ?
-                  this.router.navigate(['listProjects']);
-              }, (error) => { // error
-                  console.log (error);
-              });
-          }
-      }
+    public submitLoginForm() {
+        console.log('Test0!!!!!!!!!!!!!!!!!');
+        if (this.loginForm.valid) {
+            this.httpClient.post(
+                '/api/login',
+                this.loginForm.value, {
+                    responseType: 'json'
+                }).subscribe((response) => { // success
+                    console.log(response);
+                    // TODO Save token dans le localStorage ?
+                    this.router.navigate(['listProjects']);
+                }, (error) => { // error
+                    console.log(error);
+                });
+        }
+    }
+
+    /*public logout() {
+        const authToken = localStorage.getItem(AppConstants.AUTH_TOKEN_VALUE_NAME);
+        this.httpClient.delete('/api/tokens', {
+            headers: (new HttpHeaders()).set('Authorization', `${authToken}`),
+            responseType: 'json'
+        }).subscribe(() => {
+            this.doLocalLogout();
+        }, () => {
+            this.doLocalLogout();
+        });
+    }*/
 }
