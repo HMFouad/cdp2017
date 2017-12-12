@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
             .json({ success: false, message: "Missing userName or password" });
     }
     else {
-        // TODO encrypt password 
+        // TODO encrypt password
 
         db_connexion.query('SELECT * FROM users WHERE username = ?', [username_co], function (error, user, fields) {
             if (error) {
@@ -49,6 +49,7 @@ router.post('/login', (req, res) => {
             } else if (password_co == user[0].password) {
 
                 console.log("query select user: ok");
+            
 
                 createToken((tokenValue) => {
                     console.log('Create token');
