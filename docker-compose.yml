@@ -6,7 +6,7 @@ networks:
 
 services:
   server:
-    container_name: server&front
+    container_name: serverNFront
     build: GGHB/
 
   mysql:
@@ -15,4 +15,7 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - /var/lib/docker/volumes/bd:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
