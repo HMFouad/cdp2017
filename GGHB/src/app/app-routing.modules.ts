@@ -6,6 +6,7 @@ import { ListProjectsComponent } from './listProjects/listProjects.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { CreateSprintComponent } from './create-sprint/create-sprint.component';
 import { CreateUsComponent } from './create-us/create-us.component';
+import {InviteToProjectComponent} from "./invite-to-project/invite-to-project.component";
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
   {path: 'createProject', component: CreateProjectComponent},
   {path: 'createSprint', component: CreateSprintComponent},
   {path: 'createUs', component: CreateUsComponent},
+  {path: 'inviteToProject', component: InviteToProjectComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
