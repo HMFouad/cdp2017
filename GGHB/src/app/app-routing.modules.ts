@@ -7,12 +7,14 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { CreateSprintComponent } from './create-sprint/create-sprint.component';
 import { CreateUsComponent } from './create-us/create-us.component';
 import {InviteToProjectComponent} from "./invite-to-project/invite-to-project.component";
+import {ListSprintsComponent} from "./list-sprints/list-sprints.component";
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'listProjects', component: ListProjectsComponent},
   {path: 'createProject', component: CreateProjectComponent},
+  {path: 'listSprints', component: ListSprintsComponent},
   {path: 'createSprint', component: CreateSprintComponent},
   {path: 'createUs', component: CreateUsComponent},
   {path: 'inviteToProject', component: InviteToProjectComponent},
