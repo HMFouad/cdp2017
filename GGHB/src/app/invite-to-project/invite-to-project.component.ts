@@ -17,7 +17,7 @@ export class InviteToProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.inviteToProjectForm = new FormGroup({
-      userName: new FormControl('', [Validators.required]),
+      username_inv: new FormControl('', [Validators.required]),
       projectName: new FormControl('', [Validators.required]),
     });
   }
@@ -26,8 +26,8 @@ export class InviteToProjectComponent implements OnInit {
     return this.inviteToProjectForm.get('projectName');
   }
 
-  public get userName() {
-    return this.inviteToProjectForm.get('userName');
+  public get username_inv() {
+    return this.inviteToProjectForm.get('username_inv');
   }
 
 

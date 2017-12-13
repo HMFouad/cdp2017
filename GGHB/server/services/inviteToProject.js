@@ -4,7 +4,7 @@ const bd_connexion = require('./../../bd/bd_connexion');
 
 
 router.post('/inviteToProject', (req, res) => {
-  const name = req.body.userName;
+  const name = req.body.username_inv;
 const project = req.body.projectName;
 
 if (name == "" || project == "") {
