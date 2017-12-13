@@ -19,5 +19,14 @@ router.use('/', project);
 router.use('/', deleteUs);
 
 
+const createSprint = require('./services/createSprint');
+const inviteToProject = require('./services/inviteToProject');
+const listSprints = require('./services/listSprints');
+router.use('/', addUser);
+router.use('/', login);
+router.use('/', createProject);
+router.use('/', createSprint);
+router.use('/', inviteToProject);
+router.use('/', listSprints);
 
 module.exports = router;

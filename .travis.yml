@@ -22,4 +22,5 @@ install:
 
 before_script:
   - webdriver-manager update --gecko false
-  - npm start
+  - ng build
+  - node server/server.js &
