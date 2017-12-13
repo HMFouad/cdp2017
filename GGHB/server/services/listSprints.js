@@ -8,7 +8,6 @@ const crypt = require('./encrypt');
 
 router.post('/listSprints/:projectID', (req, res) => {
 
-  console.log("Service POST /sprintsList");
 
 const projectID = req.params.projectID;
 console.log("projectID for ListSprints: " + projectID);
