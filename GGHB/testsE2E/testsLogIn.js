@@ -1,8 +1,8 @@
 var alertHandlerClass = require('./alertHandler.js');
 var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
+var baseURL = require('./baseURL.js');
 
 describe('[Test] Log in', function() {
-  let baseURL = "http://localhost:4200/";
 	let path = "";
 	let pathWhenComplete = "listProjects";
 

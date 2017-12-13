@@ -10,17 +10,18 @@ const crypt = require('./encrypt');
  * @param {function(string)} handleCreation Function which handle the new token
  */
 function createToken(handleCreation) {
-    const newToken = jwt.sign('GGHB', secretcode.SECRET_CODE);
-    db_connexion.query('SELECT * FROM users WHERE authToken = ?', [newToken], function (err, user) {
+    const newToken = jwt.sign(Math.random(), secretcode.SECRET_CODE);
+    console.log('token   :   ' + newToken);
+    db_connexion.query('SELECT * FROM tokens WHERE value = ?', [newToken], function (err, token) {
         if (err) {
             console.log('Error creation token');
             // TODO handle
         }
 
-        /*if (user) {
+        else if (token.data>0) {
             createToken(handleCreation);
             console.log('creation token');
-        }*/
+        } 
         else {
             handleCreation(newToken);
         }
@@ -62,7 +63,7 @@ router.post('/login', (req, res) => {
                     console.log('TokenValue   :   ' + tokenValue);
                     console.log('Tokendelai   :   ' + expiresAt);
 
-                    db_connexion.query('INSERT INTO tokens(id, value, expire_at) VALUES (?,?,?)', [user[0].id, tokenValue, expiresAt], function (error, results, fields) {
+                    db_connexion.query('INSERT INTO tokens(value, expire_at) VALUES (?,?)', [tokenValue, expiresAt], function (error, results, fields) {
                         if (error) {
                             res.json({
                                 status: false,
