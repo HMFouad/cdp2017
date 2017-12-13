@@ -5,14 +5,14 @@ networks:
     driver: bridge
 
 services:
-  angular:
-    container_name: front
+  server:
+    container_name: server&front
     build: GGHB/
-
-  node:
-    container_name: server
-    build: GGHB/server/
 
   mysql:
     container_name: bd
     image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - /var/lib/docker/volumes/bd:/var/lib/mysql
