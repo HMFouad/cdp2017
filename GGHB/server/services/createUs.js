@@ -4,14 +4,16 @@ const bd_connexion = require ('./../../bd/bd_connexion');
 
 
 // Registration service
-router.post('/createUs', (req, res) => {
-id_project=req.body.project_id;
+router.post('/createUs/:id_project', (req, res) => {
+const id_project = req.params.id_project;
+//router.post('/createUs', (req, res) => {
+//id_project=req.body.project_id;
   description=req.body.usDescription;
   priority=req.body.usPriority;
   difficulty=req.body.usDifficulty;
   state=req.body.usState;
-console.log(id_project);
-      bd_connexion.query('INSERT INTO us(description,priority,difficult,state,project_id) VALUES (?,?,?,?,?)',[description,priority,difficulty,state,id_project], function(error, data, fields) {
+//console.log(id_project);
+      bd_connexion.query('INSERT INTO us(description,priority,difficult,state,project_id) VALUES (?,?,?,?,?)',[description,priority,difficulty,state,id_project], function(error, us, fields) {
 			if(error){
         res.json({
         status:false,
@@ -20,7 +22,7 @@ console.log(id_project);
     }else {
 
       res.send(JSON.stringify({
-        result:data
+        result:us
       }));
 
     }

@@ -11,8 +11,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./create-us.component.css']
 })
 export class CreateUsComponent implements OnInit {
-  public us:any;
-  private project_id;
 
   private createUsForm: FormGroup;
 
@@ -46,36 +44,21 @@ public chooseUSer(){
 
     public submitCreateUsForm () {
 
-      window.sessionStorage.setItem('currentProjectID', "3");
-
-      this.project_id = window.sessionStorage.getItem('currentProjectID');
-      const body = {project_id: this.project_id};
-     this.httpClient.post(
-       '/api/createUs',this.createUsForm.value).subscribe((us) => {
-         this.us = us;
-    //   this.router.navigate(['listSprints']);
-     }, (error) => { // error
-       console.log(error);
-     });
-
+      const body = this.createUsForm.value;
+      body.project_id = 3;
+    //  body.project_id = JSON.parse(localStorage.getItem('currentProject'))['0'].id});
+      alert(body.project_id);
+       if (this.createUsForm.valid) {
+          this.httpClient.post(
+            '/api/createUs',
+            this.createUsForm.value, {
+                  responseType: 'json'
+              }).subscribe((response) => { // success
+              console.log (response);
+          }, (error) => { // error
+            console.log (error);
+          });
+       }else {console.log ('Not Valid');
+      }
     }
 }
-
-
-/*ngOnInit() {
-   window.sessionStorage.setItem('currentProjectID', "1");
-
-   this.projectID = window.sessionStorage.getItem('currentProjectID');
-   const body = {projectID: this.projectID};
-
-   this.httpClient.post(
-     '/api/listSprints/'+ this.projectID,
-     body).subscribe((sprints) => {
-       this.sprints = sprints;
-     this.router.navigate(['listSprints']);
-   }, (error) => { // error
-     console.log(error);
-   });
-
- }
-*/

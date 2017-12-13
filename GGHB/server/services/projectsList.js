@@ -21,8 +21,8 @@ router.post('/projectslist',(req, res) => {
             console.log("query select user: ok");
             console.log("UserID is:  " + user[0].id);
         }
-    
-    
+
+
     db_connexion.query('SELECT * FROM acl WHERE user_id = ?', [user[0].id], function (error, project, fields) {
         if (error) {
             console.log("query select project: error");

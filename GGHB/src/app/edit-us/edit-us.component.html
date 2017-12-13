@@ -2,10 +2,10 @@
   <div class="row">
       <div class="col-md-6 col-lg-4 mx-auto">
           <div class="card card-body">
-              <h3 class="text-center mb-4">Create an us</h3>
+              <h3 class="text-center mb-4">edit an us</h3>
               <form class="formGroup"
                     novalidate
-                    [formGroup]="createUsForm">
+                    [formGroup]="editUsForm">
                   <div class="form-group">
 
                     <div class="form-group">
@@ -59,17 +59,18 @@
                id="usState"
                placeholder="Choose a State"
                 formControlName="usState">
-                <option value="todo">Todo</option>
-                <option value="done">Done</option>
+                <option value="todo">TODO</option>
+                <option value="doing">DOING</option>
+                <option value="done">DONE</option>
                 </select>
             </div>
 
                 <div align="center">
                       <button class="btn btn-primary btn-sm"
                               type="submit"
-                              name="createUs"
-                              (click)="submitCreateUsForm()" routerLink="/project">
-                          Create Us
+                              name="editUs"
+                              (click)="submiteditUsForm()" routerLink="/project">
+                          edit Project
                       </button>
                       <button class="btn btn-secondary btn-sm"
                               type="reset"
