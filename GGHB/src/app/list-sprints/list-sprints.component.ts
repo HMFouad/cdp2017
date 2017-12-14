@@ -18,9 +18,9 @@ export class ListSprintsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    window.sessionStorage.setItem('currentProjectID', "1");
 
-    this.projectID = window.sessionStorage.getItem('currentProjectID');
+
+    this.projectID = sessionStorage.getItem('currentProjectID');
     const body = {projectID: this.projectID};
 
     this.httpClient.post(
