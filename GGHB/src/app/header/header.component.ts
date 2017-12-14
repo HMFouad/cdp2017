@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {AppConstants} from './../app-constants';
+import {AppVariables} from './../app-variables';
 
 @Component({
     selector: 'gghb-header',
@@ -13,13 +14,14 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
-    private userConnected: boolean;
+    public userConnected: boolean;
 
     public constructor(private httpClient: HttpClient,
         private router: Router) { }
 
     public ngOnInit(): void {
         this.userConnected = false;
+        AppVariables.isConnected = false;
         this.loginForm = new FormGroup({
             'userName': new FormControl('', [Validators.required]),
             'password': new FormControl('', [Validators.required]),
@@ -45,11 +47,14 @@ export class HeaderComponent implements OnInit {
                     sessionStorage.setItem('username', this.loginForm.value.userName);
                     console.log(response);
 
-                    this.userConnected = true;
+                    AppVariables.isConnected = true;
+
+                    this.userConnected = AppVariables.isConnected;
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
                 }, (error) => { // error
-                    this.userConnected = false;
+                    AppVariables.isConnected = false;
+                    this.userConnected = AppVariables.isConnected;
                     console.log(error);
                 });
         }
@@ -57,6 +62,7 @@ export class HeaderComponent implements OnInit {
 
     public logout() {
         this.userConnected = false;
+        AppVariables.isConnected = false;
         this.router.navigate(['home']);
         sessionStorage.setItem('username', null);
     }

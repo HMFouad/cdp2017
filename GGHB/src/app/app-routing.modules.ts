@@ -8,8 +8,8 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { CreateSprintComponent } from './create-sprint/create-sprint.component';
 import { CreateUsComponent } from './create-us/create-us.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
-import {InviteToProjectComponent} from "./invite-to-project/invite-to-project.component";
-import {ListSprintsComponent} from "./list-sprints/list-sprints.component";
+import {InviteToProjectComponent} from './invite-to-project/invite-to-project.component';
+import {ListSprintsComponent} from './list-sprints/list-sprints.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
