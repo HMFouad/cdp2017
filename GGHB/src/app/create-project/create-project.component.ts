@@ -31,7 +31,7 @@ export class CreateProjectComponent implements OnInit {
   public submitCreateProjectForm () {
     var body = this.createProjectForm.value;
     body.user_id = sessionStorage.getItem('username');
-    alert("Project created with success");
+    alert('Project created with success');
      if (this.createProjectForm.valid) {
         this.httpClient.post(
           '/api/createProject/' + body.user_id,
