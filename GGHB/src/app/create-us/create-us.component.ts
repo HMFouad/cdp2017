@@ -40,17 +40,10 @@ export class CreateUsComponent implements OnInit {
     return this.createUsForm.get('usState');
   }
 
-public chooseUSer(){
-//  this.httpClient.get()
-}
-
     public submitCreateUsForm () {
 
-      window.sessionStorage.setItem('currentProjectID', "3");
-
-      this.project_id = window.sessionStorage.getItem('currentProjectID');
+      this.project_id=sessionStorage.getItem('currentProjectID');
       const body = {project_id: this.project_id};
-  
        this.httpClient.post('/api/createUs/'+ this.project_id, this.createUsForm.value).subscribe((us) =>{
           this.us = us;
      }, (error) => { // error
@@ -59,22 +52,3 @@ public chooseUSer(){
 
     }
 }
-
-
-/*ngOnInit() {
-   window.sessionStorage.setItem('currentProjectID', "1");
-
-   this.projectID = window.sessionStorage.getItem('currentProjectID');
-   const body = {projectID: this.projectID};
-
-   this.httpClient.post(
-     '/api/listSprints/'+ this.projectID,
-     body).subscribe((sprints) => {
-       this.sprints = sprints;
-     this.router.navigate(['listSprints']);
-   }, (error) => { // error
-     console.log(error);
-   });
-
- }
-*/
