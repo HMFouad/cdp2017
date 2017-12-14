@@ -3,19 +3,14 @@ const router = express.Router();
 const bd_connexion = require('./../../bd/bd_connexion');
 
 
-router.post('/inviteToProject', (req, res) => {
+router.post('/inviteToProject/:projectID', (req, res) => {
   const name = req.body.username_inv;
-const project = req.body.projectName;
-
-if (name == "" || project == "") {
+  const projectID = req.params.projectID;
+  console.log("name=" + name + " projectID=" + projectID);
+if (name == "") {
   console.log("You haven't completed all fields");
 }
 else {
-  var callback = function (result) {
-    alreadyAffiliated = result;
-  };
-  var alreadyAffiliated = false;
-  //let addUserInProject = false;
   //Regarde si l'utilisateur est déjà affilié au projet
   bd_connexion.query("SELECT * FROM `acl` " +
     "WHERE user_id IN " +

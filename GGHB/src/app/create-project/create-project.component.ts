@@ -29,13 +29,12 @@ export class CreateProjectComponent implements OnInit {
   }
 
   public submitCreateProjectForm () {
-    const body = this.createProjectForm.value;
-    body.user_id = localStorage.getItem('users.id');
+    var body = this.createProjectForm.value;
+    body.user_id = sessionStorage.getItem('username');
     alert(body.user_id);
-  //  alert(body.user_id);
      if (this.createProjectForm.valid) {
         this.httpClient.post(
-          '/api/createProject',
+          '/api/createProject/' + body.user_id,
           this.createProjectForm.value, {
                 responseType: 'json'
             }).subscribe((response) => { // success

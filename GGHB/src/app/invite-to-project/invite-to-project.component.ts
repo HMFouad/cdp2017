@@ -15,10 +15,11 @@ export class InviteToProjectComponent implements OnInit {
   public constructor(private httpClient: HttpClient) {
   }
 
+  public project: any;
+
   ngOnInit(): void {
     this.inviteToProjectForm = new FormGroup({
       username_inv: new FormControl('', [Validators.required]),
-      projectName: new FormControl('', [Validators.required]),
     });
   }
 
@@ -32,16 +33,14 @@ export class InviteToProjectComponent implements OnInit {
 
 
   public submitInviteToProjectForm() {
+    console.log(this.username_inv);
+
     if (this.inviteToProjectForm.valid) {
       this.httpClient.post(
-        '/api/inviteToProject',
+        '/api/inviteToProject' + sessionStorage.getItem('currentProjectID'),
         this.inviteToProjectForm.value, {
           responseType: 'json'
-        }).subscribe((response) => { // success
-        console.log(response);
-      }, (error) => { // error
-        console.log(error);
-      });
+        });
     } else {
       console.log('Not Valid');
     }
