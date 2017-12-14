@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
+    private userNameLog;
+
     public userConnected: boolean;
 
 
@@ -45,6 +47,7 @@ export class HeaderComponent implements OnInit {
                 }).subscribe((response) => { // success
                     sessionStorage.setItem('username', this.loginForm.value.userName);
                     sessionStorage.setItem('isConnected', "true");
+                    this.userNameLog = this.loginForm.value.userName;
                     this.userConnected = true;
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
