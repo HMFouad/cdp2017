@@ -33,10 +33,9 @@
     </tr>
   </th>
   <th scope="row">
-    <tr *ngFor="let sprint of sprints">
+    <tr *ngFor="let sprint of sprints"   (click)="storeCurrentSprintID(sprint.id)">
       {{ sprint.sprint_name }}
     </tr>
   </th>
   </tbody>
-
 </table>

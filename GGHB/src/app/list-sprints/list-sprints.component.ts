@@ -27,10 +27,15 @@ export class ListSprintsComponent implements OnInit {
       '/api/listSprints/'+ this.projectID,
       body).subscribe((sprints) => {
         this.sprints = sprints;
-      this.router.navigate(['listSprints']);
+    //  this.router.navigate(['listSprints']);
     }, (error) => { // error
       console.log(error);
     });
 
   }
+
+  storeCurrentSprintID(id){
+    window.sessionStorage.setItem('currentSprintID', id);
+    this.router.navigate(['/listTasks']);
+    }
 }

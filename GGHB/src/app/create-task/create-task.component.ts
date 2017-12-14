@@ -10,7 +10,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-
+private id_sprint;
+public tasks:any;
     private createTaskForm: FormGroup;
 
     public constructor(private httpClient: HttpClient) {}
@@ -34,22 +35,15 @@ export class CreateTaskComponent implements OnInit {
     }
 
     public submitCreateTaskForm () {
+      this.id_sprint = window.sessionStorage.getItem('currentSprintID');
+      const body = {id_sprint: this.id_sprint};
 
-      const body = this.createTaskForm.value;
-      body.sprint_id = 1;
-      //alert(body.sprint_id);
-       if (this.createTaskForm.valid) {
-          this.httpClient.post(
-            '/api/createTask',
-            this.createTaskForm.value, {
-                  responseType: 'json'
-              }).subscribe((response) => { // success
-              console.log (response);
-          }, (error) => { // error
-            console.log (error);
-          });
-       }else {console.log ('Not Valid');
-      }
-    }
+       this.httpClient.post('/api/createTask/'+ this.id_sprint, this.createTaskForm.value).subscribe((tasks) =>{
+         this.tasks = tasks;
+    }, (error) => { // error
+      console.log(error);
+    });
+
+   }
 
 }

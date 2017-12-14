@@ -10,6 +10,7 @@ import { CreateUsComponent } from './create-us/create-us.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import {InviteToProjectComponent} from './invite-to-project/invite-to-project.component';
 import {ListSprintsComponent} from './list-sprints/list-sprints.component';
+import {ListTasksComponent} from './list-tasks/list-task.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   {path: 'createUs', component: CreateUsComponent, canActivate: [AuthGuard]},
   {path: 'createTask', component: CreateTaskComponent, canActivate: [AuthGuard]},
   {path: 'listSprints', component: ListSprintsComponent, canActivate: [AuthGuard]},
+    {path: 'listTasks', component: ListTasksComponent, canActivate: [AuthGuard]},
   {path: 'createSprint', component: CreateSprintComponent, canActivate: [AuthGuard]},
   {path: 'createUs', component: CreateUsComponent, canActivate: [AuthGuard]},
   {path: 'inviteToProject', component: InviteToProjectComponent, canActivate: [AuthGuard]},

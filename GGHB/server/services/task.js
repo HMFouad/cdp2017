@@ -4,14 +4,14 @@ const bd_connexion = require ('./../../bd/bd_connexion');
 
 
 // Registration service
-router.post('/createTask', (req, res) => {
+router.post('/createTask/:id_sprint', (req, res) => {
 
   description=req.body.taskDescription;
   user=req.body.taskUser;
-  id_sprint=req.body.sprint_id;
+  id_sprint=req.params.id_sprint;
   state=req.body.taskState;
 console.log(id_sprint);
-      bd_connexion.query('INSERT INTO tasks( description, state, user_id, sprint_id) VALUES (?,?,?,?)',[description,state,user,id_sprint], function(error, data, fields) {
+      bd_connexion.query('INSERT INTO tasks( description, state, user_id, sprint_id) VALUES (?,?,?,?)',[description,state,user,id_sprint], function(error, tasks, fields) {
 			if(error){
         res.json({
         status:false,
@@ -19,9 +19,7 @@ console.log(id_sprint);
 			})
     }else {
 
-      res.send(JSON.stringify({
-        result:data
-      }));
+      res.json(tasks);
 
     }
 

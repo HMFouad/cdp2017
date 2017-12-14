@@ -20,7 +20,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { CreateUsComponent } from './create-us/create-us.component';
 import { InviteToProjectComponent } from './invite-to-project/invite-to-project.component';
 import { ListSprintsComponent } from './list-sprints/list-sprints.component';
-
+import {  ListTasksComponent} from './list-tasks/list-task.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { ListSprintsComponent } from './list-sprints/list-sprints.component';
     CreateUsComponent,
     InviteToProjectComponent,
     ListSprintsComponent,
+    ListTasksComponent
 
   ],
   imports: [
