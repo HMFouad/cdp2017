@@ -26,7 +26,7 @@
     <tr *ngFor="let u of us">
     <td>{{u.id}} </td>
     <td> {{u.description}}</td>
-      <td>{{u.usDifficulty}}</td>
+      <td>{{u.difficult}}</td>
     <td contenteditable="true" (blur)="lostfocus($event)" (keyup)="changed($event)" >{{u.priority}}</td>
     <td hidden="true">{{u.priority}}</td>
     <td contenteditable="true" (blur)="lostfocusState($event)" (keyup)="changedState($event)" >{{u.state}}</td>

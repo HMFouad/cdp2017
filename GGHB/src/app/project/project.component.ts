@@ -13,7 +13,6 @@ export class ProjectComponent implements OnInit {
 public id_project;
 public projects;
 public id_us;
-public listofUs=[];
 public priority;
 public state;
 public element;
@@ -37,9 +36,7 @@ public us:any;
 
   }
 
-
 //recuperer les id
-
 onSelectToDelete(id) {
 const data=[];
 for(let i=0; i < this.us.length; i++){

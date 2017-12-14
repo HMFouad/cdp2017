@@ -20,20 +20,20 @@ export class ListProjectsComponent implements OnInit {
     console.log(this.userID);
 
     const body = {userName: this.userID};
-    console.log(body.userName);
+    //console.log(body.userName);
 
     this.httpClient.post(
       '/api/listProjects/' + this.userID,
       body).subscribe((projects) => { // success
           this.projects = projects;
-          //this.router.navigate(['listProjects']);
-      }, (error) => { // error
+            }, (error) => { // error
           console.log(error);
       });
   }
 
   storeCurrentProjectID(id){
     window.sessionStorage.setItem('currentProjectID', id);
-    this.router.navigate(['project']);
+    this.router.navigate(['/project']);
   }
+
 }
