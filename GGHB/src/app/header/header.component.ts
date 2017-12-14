@@ -38,7 +38,8 @@ export class HeaderComponent implements OnInit {
                 this.loginForm.value, {
                     responseType: 'json'
                 }).subscribe((response) => { // success
-                    localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
+              //      localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
+                    sessionStorage.setItem('username', this.loginForm.value.userName);
                     console.log(response);
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);

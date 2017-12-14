@@ -1,9 +1,9 @@
 <br/>
 <br/>
 <div class="container" align="Center">
-<button class="btn btn-default" type="submit" name="createNewUs" routerLink="/createUs">
-    Create a new us
-    </button>
+<button class="btn btn-default" type="submit" name="createNewUs" routerLink="/createUs"> Create a new us </button>
+<button class="btn btn-default" type="submit" name="createNewSprint" routerLink="/createSprint"> Create a new sprint </button>
+<button class="btn btn-default" type="submit" name="invite" routerLink="/inviteToProject"> Invite a contributor </button>
 </div>
 <br/>
 <div class="container" align="Center">
@@ -20,17 +20,17 @@
      </tr>
    </thead>
    <tbody>
-    <tr *ngFor="let us of projects">
-   <td>{{us.id}} </td>
-   <td> {{us.description}}</td>
-     <td>{{us.difficult}}</td>
-   <td>{{us.priority}}</td>
-   <td>{{us.state}}</td>
-   <td><button type="button" class="btn btn-secondary" *ngIf='!us.onEdit' (click)="updateUS()">Update</button>
-     <button type="button" class="btn btn-secondary" *ngIf='!us.onEdit' (confirmed-click)="onSelectToDelete(us.id)"
-     ng-confirm-click="Would you delete this us?">Delete</button>
-     <!--button type="button" class="btn btn-secondary" *ngIf='!us.onEdit' (click)="deleteUS(us.id)" >Delete</button-->
-   </td>
+    <tr *ngFor="let u of us">
+    <td>{{u.id}} </td>
+    <td> {{u.description}}</td>
+      <td>{{u.usDifficulty}}</td>
+    <td contenteditable="true" (blur)="lostfocus($event)" (keyup)="changed($event)" >{{u.priority}}</td>
+    <td hidden="true">{{u.priority}}</td>
+    <td contenteditable="true" (blur)="lostfocusState($event)" (keyup)="changedState($event)" >{{u.state}}</td>
+    <td hidden="true">{{u.state}}</td>
+   <td>
+         <button type="button" class="btn btn-secondary" *ngIf='!u.onEdit' (click)="onSelectToDelete(u.id)">Delete</button>
+    </td>
  </tr>
  </tbody>
   </table>

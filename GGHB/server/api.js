@@ -8,6 +8,8 @@ const createUs=require('./services/createUs');
 const createTask=require('./services/task');
 const project = require('./services/project');
 const deleteUs = require('./services/deleteUs');
+const updateUs = require('./services/updateUs');
+const updateUsState = require('./services/updateUsState');
 
 router.use('/', addUser);
 router.use('/', login);
@@ -17,6 +19,8 @@ router.use('/', createUs);
 router.use('/', createTask);
 router.use('/', project);
 router.use('/', deleteUs);
+router.use('/', updateUs);
+router.use('/', updateUsState);
 
 
 const createSprint = require('./services/createSprint');

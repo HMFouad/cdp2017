@@ -18,7 +18,7 @@ export class ListProjectsComponent implements OnInit {
     private router: Router) { }
     public projects: any;
   ngOnInit() {
-    this.userID = localStorage.getItem(AppConstants.USER_ID_NAME);
+    this.userID = sessionStorage.getItem('username');
     console.log(this.userID);
 
     const body = {userName: this.userID};
@@ -28,8 +28,7 @@ export class ListProjectsComponent implements OnInit {
       '/api/listProjects/' + this.userID,
       body).subscribe((projects) => { // success
           this.projects = projects;
-          // TODO Save token dans le localStorage ?
-          this.router.navigate(['listProjects']);
+          //this.router.navigate(['listProjects']);
       }, (error) => { // error
           console.log(error);
       });

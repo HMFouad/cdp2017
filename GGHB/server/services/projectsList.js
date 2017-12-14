@@ -31,15 +31,15 @@ router.post('/listProjects/:username', (req, res) => {
                       for (var i = 0; i < acl.length; i++) {
                         projectsId.push(acl[i].project_id);
                       }
-                            //Add token to users table
-                            db_connexion.query('SELECT * FROM projects WHERE id in ( ? )', projectsId.join(), function (error, project, fields) {
-                                if (error) {
-                                    console.log("Query select project: error ");
-                                }
-                                else{
-                                  res.json(project);
-                                }
-                            })
+
+                      db_connexion.query('SELECT * FROM projects WHERE id in (' + projectsId.join() +')', function(error, project, fields) {
+                        console.log(project);
+                        if (error) {
+                          console.log("Query select project: error ");
+                        }
+                        else{
+                          res.json(project);}
+                      });
                     }
                 });
             } else {
