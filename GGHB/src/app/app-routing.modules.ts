@@ -1,5 +1,5 @@
 import { AuthGuard } from './../../server/services/authGuard';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ListProjectsComponent } from './listProjects/listProjects.component';
@@ -14,16 +14,16 @@ import {ListSprintsComponent} from "./list-sprints/list-sprints.component";
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'listProjects', component: ListProjectsComponent},
-  {path: 'createProject', component: CreateProjectComponent},
-  {path: 'project', component: ProjectComponent},
-  {path: 'createSprint', component: CreateSprintComponent},
-  {path: 'createUs', component: CreateUsComponent},
-  {path: 'createTask', component: CreateTaskComponent},
-  {path: 'listSprints', component: ListSprintsComponent},
-  {path: 'createSprint', component: CreateSprintComponent},
-  {path: 'createUs', component: CreateUsComponent},
-  {path: 'inviteToProject', component: InviteToProjectComponent},
+  {path: 'listProjects', component: ListProjectsComponent, canActivate: [AuthGuard]},
+  {path: 'createProject', component: CreateProjectComponent, canActivate: [AuthGuard]},
+  {path: 'project', component: ProjectComponent, canActivate: [AuthGuard]},
+  {path: 'createSprint', component: CreateSprintComponent, canActivate: [AuthGuard]},
+  {path: 'createUs', component: CreateUsComponent, canActivate: [AuthGuard]},
+  {path: 'createTask', component: CreateTaskComponent, canActivate: [AuthGuard]},
+  {path: 'listSprints', component: ListSprintsComponent, canActivate: [AuthGuard]},
+  {path: 'createSprint', component: CreateSprintComponent, canActivate: [AuthGuard]},
+  {path: 'createUs', component: CreateUsComponent, canActivate: [AuthGuard]},
+  {path: 'inviteToProject', component: InviteToProjectComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
