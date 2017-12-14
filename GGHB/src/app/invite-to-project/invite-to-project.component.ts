@@ -33,14 +33,18 @@ export class InviteToProjectComponent implements OnInit {
 
 
   public submitInviteToProjectForm() {
-    console.log(this.username_inv);
-
+    const projectID = sessionStorage.getItem('currentProjectID');
     if (this.inviteToProjectForm.valid) {
+      alert("The user has been invited");
       this.httpClient.post(
-        '/api/inviteToProject' + sessionStorage.getItem('currentProjectID'),
+        '/api/inviteToProject/' + projectID,
         this.inviteToProjectForm.value, {
           responseType: 'json'
-        });
+        }).subscribe((response) => { // success
+        console.log (response);
+      }, (error) => { // error
+        console.log (error);
+      });
     } else {
       console.log('Not Valid');
     }
