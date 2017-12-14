@@ -16,6 +16,5 @@ bd_connexion.query('SELECT * FROM  us WHERE project_id= "' + id_project + '" ', 
     res.json(us);
   }
 });
-})
-;
+});
 module.exports = router;

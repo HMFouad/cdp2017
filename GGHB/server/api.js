@@ -10,6 +10,9 @@ const project = require('./services/project');
 const deleteUs = require('./services/deleteUs');
 const updateUs = require('./services/updateUs');
 const updateUsState = require('./services/updateUsState');
+const createSprint = require('./services/createSprint');
+const inviteToProject = require('./services/inviteToProject');
+const listSprints = require('./services/listSprints');
 
 router.use('/', addUser);
 router.use('/', login);
@@ -21,11 +24,6 @@ router.use('/', project);
 router.use('/', deleteUs);
 router.use('/', updateUs);
 router.use('/', updateUsState);
-
-
-const createSprint = require('./services/createSprint');
-const inviteToProject = require('./services/inviteToProject');
-const listSprints = require('./services/listSprints');
 router.use('/', addUser);
 router.use('/', login);
 router.use('/', createProject);
