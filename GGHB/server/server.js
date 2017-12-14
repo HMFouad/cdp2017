@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const app = express();
-const db_connection = require('./../bd/bd_connexion');
+const db_connection = require('../BD/bd_connexion');
 const apiRouting = require('./api');
 
 // Parsers

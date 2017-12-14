@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const crypt = require('./encrypt');
-const bd_connexion = require ('./../../bd/bd_connexion');
+const bd_connexion = require ('../../BD/bd_connexion');
 
 
 // Registration service
