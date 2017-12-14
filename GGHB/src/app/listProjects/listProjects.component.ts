@@ -18,7 +18,7 @@ export class ListProjectsComponent implements OnInit {
     private router: Router) { }
     public projects: any;
   ngOnInit() {
-    this.userID = localStorage.getItem(AppConstants.USER_ID_NAME);
+    this.userID = sessionStorage.getItem('username');
     console.log(this.userID);
 
     const body = {userName: this.userID};
