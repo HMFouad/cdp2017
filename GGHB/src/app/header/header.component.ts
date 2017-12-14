@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
+    private userNameLog;
+
     public userConnected: boolean;
 
     public constructor(private httpClient: HttpClient,
@@ -44,6 +46,7 @@ export class HeaderComponent implements OnInit {
                     responseType: 'json'
                 }).subscribe((response) => { // success
               //      localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
+                    this.userNameLog = this.loginForm.value.userName;
                     sessionStorage.setItem('username', this.loginForm.value.userName);
                     console.log(response);
 

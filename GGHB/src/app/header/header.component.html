@@ -40,6 +40,8 @@
         </form>
 
         <form *ngIf="userConnected" class="form-inline" novalidate [formGroup]="loginForm">
+
+                <label id="usernameCoLabel">{{this.userNameLog}}</label>
             <button (click)="logout()" class="btn btn-danger">logout</button>
         </form>
 
