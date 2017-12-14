@@ -14,18 +14,17 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
-    public userConnected: boolean;
+    public userConnected: any;
 
     public constructor(private httpClient: HttpClient,
         private router: Router) { }
 
     public ngOnInit(): void {
-        this.userConnected = false;
-        AppVariables.isConnected = false;
         this.loginForm = new FormGroup({
             'userName': new FormControl('', [Validators.required]),
             'password': new FormControl('', [Validators.required]),
         });
+        this.userConnected = sessionStorage.getItem('isConnected');
     }
 
     public get userName() {
@@ -43,26 +42,23 @@ export class HeaderComponent implements OnInit {
                 this.loginForm.value, {
                     responseType: 'json'
                 }).subscribe((response) => { // success
-              //      localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
                     sessionStorage.setItem('username', this.loginForm.value.userName);
-                    console.log(response);
-
-                    AppVariables.isConnected = true;
-
-                    this.userConnected = AppVariables.isConnected;
+                    sessionStorage.setItem('isConnected', "true");
+                    this.userConnected = true;
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
                 }, (error) => { // error
-                    AppVariables.isConnected = false;
-                    this.userConnected = AppVariables.isConnected;
                     console.log(error);
                 });
         }
     }
 
     public logout() {
+      /*
         this.userConnected = false;
-        AppVariables.isConnected = false;
+        AppVariables.isConnected = false;*/
+        sessionStorage.setItem('isConnected', "false");
+        this.userConnected = false;
         this.router.navigate(['home']);
         sessionStorage.setItem('username', null);
     }
