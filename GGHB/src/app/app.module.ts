@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import {AuthGuard} from "../../server/services/authGuard";
+import {AuthGuard, HomeAuthGuard} from "../../server/services/authGuard";
 
 
 import { AppComponent } from './app/app.component';
@@ -47,7 +47,7 @@ import {  ListTasksComponent} from './list-tasks/list-task.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, HomeAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

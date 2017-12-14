@@ -1,4 +1,4 @@
-import { AuthGuard } from './../../server/services/authGuard';
+import {AuthGuard, HomeAuthGuard} from './../../server/services/authGuard';
 import {Routes, RouterModule, CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -13,7 +13,7 @@ import {ListSprintsComponent} from './list-sprints/list-sprints.component';
 import {ListTasksComponent} from './list-tasks/list-task.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, canActivate: [HomeAuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'listProjects', component: ListProjectsComponent, canActivate: [AuthGuard]},
   {path: 'createProject', component: CreateProjectComponent, canActivate: [AuthGuard]},

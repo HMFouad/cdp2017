@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db_connexion = require('./../../bd/bd_connexion');
+const db_connexion = require('../../BD/bd_connexion');
     let pro = {};
 // ProjectList service
 router.post('/listProjects/:username', (req, res) => {

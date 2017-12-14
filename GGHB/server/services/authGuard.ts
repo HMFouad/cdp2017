@@ -4,9 +4,20 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return JSON.parse(sessionStorage.getItem('isConnected'));
+  }
+}
+
+@Injectable()
+export class HomeAuthGuard implements CanActivate {
+  constructor(private router: Router) {
+  }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return !JSON.parse(sessionStorage.getItem('isConnected'));
   }
 }

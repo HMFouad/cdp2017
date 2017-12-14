@@ -17,7 +17,6 @@ export class ListProjectsComponent implements OnInit {
     public projects: any;
   ngOnInit() {
     this.userID = sessionStorage.getItem('username');
-    console.log(this.userID);
 
     const body = {userName: this.userID};
     //console.log(body.userName);

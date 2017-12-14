@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bd_connexion = require('./../../bd/bd_connexion');
+const bd_connexion = require('../../BD/bd_connexion');
 
 
 // Registration service
@@ -41,7 +41,7 @@ router.post('/createProject/:username/', (req, res) => {
     })
 
 
-    
+
   });
 });
 
