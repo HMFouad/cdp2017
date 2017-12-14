@@ -17,7 +17,8 @@ CREATE TABLE `sprints` (
   `nb` int(11) NOT NULL,
   `date_begin` date DEFAULT NULL,
   `date_end` date DEFAULT NULL,
-  `project_id` int(11) DEFAULT NULL
+  `project_id` int(11) DEFAULT NULL,
+  `sprint_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tasks` (

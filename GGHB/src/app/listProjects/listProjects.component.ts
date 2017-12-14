@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {AppConstants} from './../app-constants';
 
+
 @Component({
   selector: 'gghb-listProjects',
   templateUrl: './listProjects.component.html',
@@ -10,11 +11,12 @@ import {AppConstants} from './../app-constants';
 })
 export class ListProjectsComponent implements OnInit {
 
+
   private userID;
 
   constructor(private httpClient: HttpClient,
     private router: Router) { }
-
+    public projects: any;
   ngOnInit() {
 /*    this.userID = localStorage.getItem(AppConstants.USER_ID_NAME);
     console.log(this.userID);
@@ -23,9 +25,9 @@ export class ListProjectsComponent implements OnInit {
     console.log(body.userName);
 
     this.httpClient.post(
-      '/api/projectslist',
-      body).subscribe((response) => { // success
-          console.log(response);
+      '/api/listProjects/' + this.userID,
+      body).subscribe((projects) => { // success
+          this.projects = projects;
           // TODO Save token dans le localStorage ?
           this.router.navigate(['projectsList']);
       }, (error) => { // error
@@ -33,5 +35,10 @@ export class ListProjectsComponent implements OnInit {
       });
   }*/
 
+
+  storeCurrentProjectID(id){
+    window.sessionStorage.setItem('currentProjectID', id);
+    this.router.navigate(['project']);
+  }
 }
 }

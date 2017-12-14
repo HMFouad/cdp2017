@@ -1,25 +1,32 @@
 <div class="container" align="Center">
-<button class="btn btn-default" type="submit" name="createNewProject" routerLink="/createProject">
+  <button class="btn btn-default" type="submit" name="createNewProject" routerLink="/createProject">
     Create a new project
-    </button>
+  </button>
 </div>
 
-<div class="container" align="Center">
-  <table class="table table-bordered">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <th scope="row">
+    <tr>
+      <div *ngFor="let project of projects">
+        <button class="btn btn-primary btn-lg"
+                (click)="storeCurrentProjectID(project.id)">
+            {{ project.project }}
+        </button>
+      </div>
+    </tr>
+  </th>
+  <th scope="row">
+    <tr *ngFor="let project of projects">
+      {{ project.description }}
+    </tr>
+  </th>
+  </tbody>
 
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-      </tr>
-        </thead>
-      <tbody>
-             <!--tr *ngFor="let p of projects">
-               <td></td>
-                <td>{{p.project}}</td>
-                  <td> {{p.description}}</td>
-          </tr-->
-      </tbody>
-
-  </table>
+</table>
