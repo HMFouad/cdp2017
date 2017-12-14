@@ -4,26 +4,24 @@
   </button>
 </div>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
   <tr>
     <th scope="col">Name</th>
     <th scope="col">Description</th>
   </tr>
   </thead>
-  <tbody>
-  <div *ngFor="let project of projects">
+  <tbody *ngFor="let project of projects">
   <tr>
       <td scope="row">
-        <button class="btn btn-primary btn-lg"
+        <button class="btn btn-link"
                 (click)="storeCurrentProjectID(project.id)">
           {{ project.project }}
         </button>
       </td>
-      <td scope="row"> {{ project.description }}
+      <td> {{ project.description }}
       </td>
     </tr>
-  </div>
   </tbody>
 
 </table>
