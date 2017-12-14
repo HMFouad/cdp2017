@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS `cdp` DEFAULT CHARACTER SET utf8 COLLATE utf8_gene
 USE cdp;
 
 CREATE TABLE `acl` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -68,6 +69,9 @@ ALTER TABLE `us`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `acl`
   ADD PRIMARY KEY (`id`);
 
 
