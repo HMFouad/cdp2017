@@ -3,7 +3,7 @@ const router = express.Router();
 const tokendelay = require("./tokens/token_config");
 const secretcode = require("./tokens/secret_code");
 const jwt = require("jsonwebtoken");
-const db_connexion = require('./../../bd/bd_connexion');
+const db_connexion = require('../../BD/bd_connexion');
 const crypt = require('./encrypt');
 
 /**
