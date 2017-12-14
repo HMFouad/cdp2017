@@ -47,21 +47,18 @@ describe('[Test] Log in', function() {
     fillFields('', '');
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('without username', function(){
     fillFields('', pwd);
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('without password', function(){
     fillFields(username, '');
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('with wrong password', function(){
