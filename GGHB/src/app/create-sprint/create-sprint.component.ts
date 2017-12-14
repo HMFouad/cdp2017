@@ -20,7 +20,6 @@ export class CreateSprintComponent implements OnInit {
       sprintName: new FormControl('', [Validators.required]),
       dateBegin: new FormControl('', [Validators.required]),
       dateEnd: new FormControl('', [Validators.required]),
-      projectName: new FormControl('', [Validators.required]),
       nbSprint: new FormControl('', [Validators.required]),
     });
   }
@@ -29,14 +28,10 @@ export class CreateSprintComponent implements OnInit {
     return this.createSprintForm.get('sprintName');
   }
 
-  public get projectName() {
-    return this.createSprintForm.get('projectName');
-  }
-
   public submitCreateSprintForm() {
     if (this.createSprintForm.valid) {
       this.httpClient.post(
-        '/api/createSprint',
+        '/api/createSprint/' + sessionStorage.getItem('currentProjectID'),
         this.createSprintForm.value, {
           responseType: 'json'
         }).subscribe((response) => { // success
