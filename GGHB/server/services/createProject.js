@@ -22,13 +22,7 @@ router.post('/createProject', (req, res) => {
 							res.status(200).send({idInsert: results.insertId});
 						});
 
-          //  console.log(results);
-        /*  res.json({
-            status:true,
-            data:results,
-            message:'Inscription done with success'
-        })*/
-      }
+        }
     });
 });
 

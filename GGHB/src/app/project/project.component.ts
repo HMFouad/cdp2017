@@ -44,18 +44,16 @@ public us:any;
 
 onSelectToDelete(id) {
 const data=[];
-for(let i=0; i < this.projects.length; i++){
-  if(this.projects[i]['id'] == id) {
-    data.push(this.projects[i]);
+for(let i=0; i < this.us.length; i++){
+  if(this.us[i]['id'] == id) {
+    data.push(this.us[i]);
   }
 }
-//alert(id);
 localStorage.setItem('currentUs', JSON.stringify(data));
 
 ///////////////////delete currente us//////////////////////////////
 this.id_us=id;
 this.http.post('api/deleteUs', { id_us: this.id_us}).subscribe(response => {
-//alert(this.id_us);
 });
 this.ngOnInit();
 
@@ -95,12 +93,5 @@ changedState(event) {
 
      });
  }
-
-
-updateUS(id){
-
-alert("Cliquez directement sur la priorité ou l'état à modifier!");
-}
-
 
 }

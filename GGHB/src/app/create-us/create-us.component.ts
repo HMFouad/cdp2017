@@ -50,10 +50,9 @@ public chooseUSer(){
 
       this.project_id = window.sessionStorage.getItem('currentProjectID');
       const body = {project_id: this.project_id};
-     this.httpClient.post(
-       '/api/createUs',this.createUsForm.value).subscribe((us) => {
-         this.us = us;
-    //   this.router.navigate(['listSprints']);
+  
+       this.httpClient.post('/api/createUs/'+ this.project_id, this.createUsForm.value).subscribe((us) =>{
+          this.us = us;
      }, (error) => { // error
        console.log(error);
      });
