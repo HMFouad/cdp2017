@@ -19,7 +19,6 @@ export class ListSprintsComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(window.sessionStorage.getItem('currentProjectID'));
 
     this.projectID = sessionStorage.getItem('currentProjectID');
     const body = {projectID: this.projectID};
