@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { Http, RequestOptions, URLSearchParams, ResponseContentType } from '@angular/http';
-
-
+import {AuthGuard} from "../../server/services/authGuard";
 
 
 import { AppComponent } from './app/app.component';
@@ -38,7 +36,8 @@ import { ListSprintsComponent } from './list-sprints/list-sprints.component';
     CreateTaskComponent,
     CreateUsComponent,
     InviteToProjectComponent,
-    ListSprintsComponent
+    ListSprintsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,7 @@ import { ListSprintsComponent } from './list-sprints/list-sprints.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
