@@ -10,8 +10,6 @@ import {AppConstants} from './../app-constants';
   styleUrls: ['./listProjects.component.css']
 })
 export class ListProjectsComponent implements OnInit {
-
-
   private userID;
 
   constructor(private httpClient: HttpClient,
@@ -33,7 +31,6 @@ export class ListProjectsComponent implements OnInit {
           console.log(error);
       });
   }
-
 
   storeCurrentProjectID(id){
     window.sessionStorage.setItem('currentProjectID', id);

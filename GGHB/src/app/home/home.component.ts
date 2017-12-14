@@ -44,10 +44,8 @@ public submitSignUpForm () {
           this.signUpForm.value, {
               responseType: 'json'
           }).subscribe((response) => { // success
-            console.log ('Réponse!!!!!!!!!!!!!!!!!');
             console.log (response);
       }, (error) => { // error
-          console.log ('Erreur!!!!!!!!!!!!!!!!!');
           console.log (error);
       });
    }else {console.log ('Not Valid');

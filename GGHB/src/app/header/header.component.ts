@@ -13,10 +13,13 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
+    private userConnected: boolean;
+
     public constructor(private httpClient: HttpClient,
         private router: Router) { }
 
     public ngOnInit(): void {
+        this.userConnected = false;
         this.loginForm = new FormGroup({
             'userName': new FormControl('', [Validators.required]),
             'password': new FormControl('', [Validators.required]),
@@ -41,23 +44,20 @@ export class HeaderComponent implements OnInit {
               //      localStorage.setItem(AppConstants.USER_ID_NAME, this.loginForm.value.userName);
                     sessionStorage.setItem('username', this.loginForm.value.userName);
                     console.log(response);
+
+                    this.userConnected = true;
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
                 }, (error) => { // error
+                    this.userConnected = false;
                     console.log(error);
                 });
         }
     }
 
-    /*public logout() {
-        const authToken = localStorage.getItem(AppConstants.AUTH_TOKEN_VALUE_NAME);
-        this.httpClient.delete('/api/tokens', {
-            headers: (new HttpHeaders()).set('Authorization', `${authToken}`),
-            responseType: 'json'
-        }).subscribe(() => {
-            this.doLocalLogout();
-        }, () => {
-            this.doLocalLogout();
-        });
-    }*/
+    public logout() {
+        this.userConnected = false;
+        this.router.navigate(['home']);
+        sessionStorage.setItem('username', null);
+    }
 }
