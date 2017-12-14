@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
-    public userConnected: any;
+    public userConnected: boolean;
+
 
     public constructor(private httpClient: HttpClient,
         private router: Router) { }
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
             'userName': new FormControl('', [Validators.required]),
             'password': new FormControl('', [Validators.required]),
         });
-        this.userConnected = sessionStorage.getItem('isConnected');
+        this.userConnected = JSON.parse(sessionStorage.getItem('isConnected'));
     }
 
     public get userName() {
@@ -54,12 +55,10 @@ export class HeaderComponent implements OnInit {
     }
 
     public logout() {
-      /*
-        this.userConnected = false;
-        AppVariables.isConnected = false;*/
         sessionStorage.setItem('isConnected', "false");
         this.userConnected = false;
         this.router.navigate(['home']);
         sessionStorage.setItem('username', null);
+        console.log(sessionStorage.getItem('isConnected'));
     }
 }
