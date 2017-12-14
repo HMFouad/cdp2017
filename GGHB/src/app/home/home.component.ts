@@ -3,6 +3,8 @@ import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AppComponent} from "../app/app.component";
+import {AppVariables} from "../app-variables";
 
 @Component({
   selector: 'gghb-home',
@@ -36,7 +38,6 @@ public get confirmPassword () {
 }
 
 public submitSignUpForm () {
-  console.log ('Test0!!!!!!!!!!!!!!!!!');
    if (this.signUpForm.valid) {
 
       this.httpClient.post(
