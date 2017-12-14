@@ -10,7 +10,7 @@ describe('[Test] Log in', function() {
 	let passwordField = element(by.id('password_co'));
 	let logInButton = element(by.id('logIn'));
 
-  let usernameCoLabel = element(by.id('usernameCoLabel'));
+  //let usernameCoLabel = element(by.id('usernameCoLabel'));
   let stringPleaseFill = "Please, fill all fields.";
   let stringWrongPwd = "Wrong username/password";
 
@@ -40,35 +40,35 @@ describe('[Test] Log in', function() {
     fillFields(username, pwd);
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+pathWhenComplete);
-    expect(usernameCoLabel.getText()).toEqual(username);
+    expect(element(by.id('usernameCoLabel')).getText()).toEqual(username);
   });
 
   it('with nothing', function(){
     fillFields('', '');
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(usernameCoLabel.getText()).toEqual('');
+    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('without username', function(){
     fillFields('', pwd);
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(usernameCoLabel.getText()).toEqual('');
+    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('without password', function(){
     fillFields(username, '');
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(usernameCoLabel.getText()).toEqual('');
+    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
   });
 
   it('with wrong password', function(){
     fillFields(username, wrongPwd);
     logInButton.click();
     expect(browser.getCurrentUrl()).toBe(baseURL+path);
-    expect(usernameCoLabel.getText()).toEqual('');
+    expect(element(by.id('usernameCoLabel')).getText()).toEqual('');
     alertHandler.expect(stringWrongPwd);
   });
 
