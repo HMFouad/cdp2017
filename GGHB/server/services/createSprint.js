@@ -3,22 +3,22 @@ const router = express.Router();
 const bd_connexion = require('./../../bd/bd_connexion');
 
 
-router.post('/createSprint', (req, res) => {
+router.post('/createSprint/:projectID', (req, res) => {
 
   const dateBegin = req.body.dateBegin;
 const dateEnd = req.body.dateEnd;
 const sprintName = req.body.sprintName;
-const projectName = req.body.projectName;
+const projectID = req.params.projectID;
 const nbSprint = req.body.nbSprint;
 
-bd_connexion.query('SELECT id FROM `projects` WHERE project=?', projectName, function (error, results) {
+console.log("project_id=" + projectID);
+bd_connexion.query('SELECT id FROM `projects` WHERE project=?', projectID, function (error, results) {
   if (error) {
     throw error;
   }
   else {
-    const projectId = results[0].id;
     bd_connexion.query('INSERT INTO sprints(nb, date_begin, ' +
-      'date_end, project_id, sprint_name) VALUES (?, ?, ?, ?, ?)', [nbSprint, dateBegin, dateEnd, projectId, sprintName], function (error, results, fields) {
+      'date_end, project_id, sprint_name) VALUES (?, ?, ?, ?, ?)', [nbSprint, dateBegin, dateEnd, projectID, sprintName], function (error, results, fields) {
       if (error) {
         throw error;
       }
