@@ -40,7 +40,11 @@ export class InviteToProjectComponent implements OnInit {
         '/api/inviteToProject/' + projectID,
         this.inviteToProjectForm.value, {
           responseType: 'json'
-        });
+        }).subscribe((response) => { // success
+        console.log (response);
+      }, (error) => { // error
+        console.log (error);
+      });
     } else {
       console.log('Not Valid');
     }
