@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {AppConstants} from './../app-constants';
 
+
 @Component({
   selector: 'gghb-listProjects',
   templateUrl: './listProjects.component.html',
   styleUrls: ['./listProjects.component.css']
 })
 export class ListProjectsComponent implements OnInit {
+
 
   private userID;
 
@@ -33,4 +35,9 @@ export class ListProjectsComponent implements OnInit {
       });
   }
 
+
+  storeCurrentProjectID(id){
+    window.sessionStorage.setItem('currentProjectID', id);
+    this.router.navigate(['project']);
+  }
 }

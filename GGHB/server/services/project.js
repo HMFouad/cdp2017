@@ -6,6 +6,7 @@ const bd_connexion = require ('./../../bd/bd_connexion');
 
 //liste des us
 router.post('/project', (req, res) => {
+
 id_project=req.body.id_project;
 //id_project=16;
 console.log(id_project);

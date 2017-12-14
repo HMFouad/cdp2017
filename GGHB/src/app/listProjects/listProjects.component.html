@@ -13,8 +13,13 @@
   </thead>
   <tbody>
   <th scope="row">
-    <tr *ngFor="let project of projects">
-      {{ project.project }}
+    <tr>
+      <div *ngFor="let project of projects">
+        <button class="btn btn-primary btn-lg"
+                (click)="storeCurrentProjectID(project.id)">
+            {{ project.project }}
+        </button>
+      </div>
     </tr>
   </th>
   <th scope="row">
