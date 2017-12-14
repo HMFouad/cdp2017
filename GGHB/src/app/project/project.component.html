@@ -3,7 +3,7 @@
 <div class="container" align="Center">
 <button class="btn btn-default" type="submit" name="createNewUs" routerLink="/createUs"> Create a new us </button>
 <button class="btn btn-default" type="submit" name="createNewSprint" routerLink="/createSprint"> Create a new sprint </button>
-<button class="btn btn-default" type="submit" name="invit" routerLink="/inviteToProject"> Invit a contributor </button>
+<button class="btn btn-default" type="submit" name="invite" routerLink="/inviteToProject"> Invite a contributor </button>
 </div>
 <br/>
 <div class="container" align="Center">
@@ -23,7 +23,7 @@
     <tr *ngFor="let u of us">
     <td>{{u.id}} </td>
     <td> {{u.description}}</td>
-      <td>{{u.difficult}}</td>
+      <td>{{u.usDifficulty}}</td>
     <td contenteditable="true" (blur)="lostfocus($event)" (keyup)="changed($event)" >{{u.priority}}</td>
     <td hidden="true">{{u.priority}}</td>
     <td contenteditable="true" (blur)="lostfocusState($event)" (keyup)="changedState($event)" >{{u.state}}</td>

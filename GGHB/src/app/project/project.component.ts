@@ -25,8 +25,6 @@ public us:any;
 ) {}
 
   ngOnInit() {
-  window.sessionStorage.setItem('currentProjectID', "3");
-
      this.id_project = window.sessionStorage.getItem('currentProjectID');
      const body = {id_project: this.id_project};
 
