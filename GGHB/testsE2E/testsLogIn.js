@@ -3,7 +3,7 @@ var alertHandler = new alertHandlerClass(1500, "Pas de dialogue d'alerte");
 var baseURL = require('./baseURL.js');
 
 describe('[Test] Log in', function() {
-	let path = "";
+	let path = "home";
 	let pathWhenComplete = "listProjects";
 
   let usernameField = element(by.id('username_co'));
