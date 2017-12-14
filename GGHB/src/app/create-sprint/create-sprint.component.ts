@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -12,7 +11,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class CreateSprintComponent implements OnInit {
   private createSprintForm: FormGroup;
 
-  public constructor(private httpClient: HttpClient) {
+  public constructor(private httpClient: HttpClient, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -20,7 +19,7 @@ export class CreateSprintComponent implements OnInit {
       sprintName: new FormControl('', [Validators.required]),
       dateBegin: new FormControl('', [Validators.required]),
       dateEnd: new FormControl('', [Validators.required]),
-      nbSprint: new FormControl('', [Validators.required]),
+      nbSprint: new FormControl('', []),
     });
   }
 
