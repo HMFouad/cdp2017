@@ -18,9 +18,9 @@ describe('[Test] Log in', function() {
   let pwd = '123456789';
   let wrongPwd = '123456788';
 
-  function fillFields(name, pwd){
-    usernameField.sendKeys(name);
-    passwordField.sendKeys(pwd);
+  function fillFields(n, p){
+    usernameField.sendKeys(n);
+    passwordField.sendKeys(p);
   }
 
   beforeAll(() => {
