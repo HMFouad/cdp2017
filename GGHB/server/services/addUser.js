@@ -31,8 +31,6 @@ router.post('/addUser', (req, res) => {
                 }
             });
         }
-
-        console.log(user.length)
     })
 });
 

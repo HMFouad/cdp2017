@@ -11,7 +11,6 @@ const sprintName = req.body.sprintName;
 const projectID = req.params.projectID;
 const nbSprint = req.body.nbSprint;
 
-console.log("project_id=" + projectID);
 bd_connexion.query('SELECT id FROM `projects` WHERE project=?', projectID, function (error, results) {
   if (error) {
     throw error;

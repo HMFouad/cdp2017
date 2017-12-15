@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {HttpClient} from '@angular/common/http';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'gghb-home',
@@ -41,13 +41,11 @@ export class HomeComponent implements OnInit {
         this.signUpForm.value, {
           responseType: 'json'
         }).subscribe((response) => { // success
-          console.log(response);
           alert('Inscription done with success\nYou can Sign in now');
         }, (error) => { // error
           console.log(error);
         });
     } else {
-      console.log('Not Valid');
     }
   }
 }

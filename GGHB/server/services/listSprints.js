@@ -8,17 +8,16 @@ const crypt = require('./encrypt');
 
 router.post('/listSprints/:projectID', (req, res) => {
 
-const projectID = req.params.projectID;
-console.log("projectID for ListSprints: " + projectID);
+  const projectID = req.params.projectID;
 
-db_connexion.query('SELECT * FROM `sprints`  WHERE project_id = ?', projectID, function (error, sprints, fields) {
-  if (error) {
-    console.log(error);
-  }
-  else {
-    res.json(sprints);
-  }
-});
+  db_connexion.query('SELECT * FROM `sprints`  WHERE project_id = ?', projectID, function (error, sprints, fields) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.json(sprints);
+    }
+  });
 });
 
 module.exports = router;

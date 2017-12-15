@@ -19,8 +19,6 @@ export class ListProjectsComponent implements OnInit {
     this.userID = sessionStorage.getItem('username');
 
     const body = {userName: this.userID};
-    //console.log(body.userName);
-
     this.httpClient.post(
       '/api/listProjects/' + this.userID,
       body).subscribe((projects) => { // success

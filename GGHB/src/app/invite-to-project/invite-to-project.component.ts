@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'gghb-invite-to-project',
@@ -41,12 +41,10 @@ export class InviteToProjectComponent implements OnInit {
         this.inviteToProjectForm.value, {
           responseType: 'json'
         }).subscribe((response) => { // success
-        console.log (response);
-      }, (error) => { // error
-        console.log (error);
-      });
+        }, (error) => { // error
+          console.log(error);
+        });
     } else {
-      console.log('Not Valid');
     }
   }
 }

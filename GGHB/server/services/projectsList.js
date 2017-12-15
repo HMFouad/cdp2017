@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db_connexion = require('../../BD/bd_connexion');
-    let pro = {};
+let pro = {};
 // ProjectList service
 router.post('/listProjects/:username', (req, res) => {
 
@@ -17,29 +17,26 @@ router.post('/listProjects/:username', (req, res) => {
                 res
                     .json({ success: false, message: "error select username" });
             } else if (username_co == user[0].username) {
-                console.log("query select user: ok");
-                console.log("UserID is:  " + user[0].id);
 
                 db_connexion.query('SELECT * FROM acl WHERE user_id = ?', [user[0].id], function (error, acl, fields) {
                     if (error) {
                         console.log("query select project from acl: error");
                         res.json({ success: false, message: "User not found" });
                     } else {
-                      console.log('Number of projects for this user is   :   ' + acl.length);
-                      var projectsId = [];
+                        var projectsId = [];
 
-                      for (var i = 0; i < acl.length; i++) {
-                        projectsId.push(acl[i].project_id);
-                      }
-
-                      db_connexion.query('SELECT * FROM projects WHERE id in (' + projectsId.join() +')', function(error, project, fields) {
-                        console.log(project);
-                        if (error) {
-                          console.log("Query select project: error ");
+                        for (var i = 0; i < acl.length; i++) {
+                            projectsId.push(acl[i].project_id);
                         }
-                        else{
-                          res.json(project);}
-                      });
+
+                        db_connexion.query('SELECT * FROM projects WHERE id in (' + projectsId.join() + ')', function (error, project, fields) {
+                            if (error) {
+                                console.log("Query select project: error ");
+                            }
+                            else {
+                                res.json(project);
+                            }
+                        });
                     }
                 });
             } else {
