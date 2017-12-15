@@ -7,7 +7,6 @@ import { ProjectComponent } from './project/project.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { CreateSprintComponent } from './create-sprint/create-sprint.component';
 import { CreateUsComponent } from './create-us/create-us.component';
-import { CreateTaskComponent } from './create-task/create-task.component';
 import {InviteToProjectComponent} from './invite-to-project/invite-to-project.component';
 import {ListSprintsComponent} from './list-sprints/list-sprints.component';
 import {ListTasksComponent} from './list-tasks/list-task.component';
@@ -20,7 +19,6 @@ const appRoutes: Routes = [
   {path: 'project', component: ProjectComponent, canActivate: [AuthGuard]},
   {path: 'createSprint', component: CreateSprintComponent, canActivate: [AuthGuard]},
   {path: 'createUs', component: CreateUsComponent, canActivate: [AuthGuard]},
-  {path: 'createTask', component: CreateTaskComponent, canActivate: [AuthGuard]},
   {path: 'listSprints', component: ListSprintsComponent, canActivate: [AuthGuard]},
     {path: 'listTasks', component: ListTasksComponent, canActivate: [AuthGuard]},
   {path: 'createSprint', component: CreateSprintComponent, canActivate: [AuthGuard]},
