@@ -62,6 +62,5 @@ export class HeaderComponent implements OnInit {
         this.userConnected = false;
         this.router.navigate(['home']);
         sessionStorage.setItem('username', null);
-        console.log(sessionStorage.getItem('isConnected'));
     }
 }

@@ -30,11 +30,6 @@ router.use('/', updateUsState);
 router.use('/', taskList);
 router.use('/', deleteTask);
 router.use('/', updateTask);
-
-
-const createSprint = require('./services/createSprint');
-const inviteToProject = require('./services/inviteToProject');
-const listSprints = require('./services/listSprints');
 router.use('/', addUser);
 router.use('/', login);
 router.use('/', createProject);
