@@ -2,7 +2,7 @@ var mysql      = require('mysql');
 
 // Create connection
 var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : 'bd_gghb',
     user     : 'root',
     password : '',
     database : 'cdp',
@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 });
 connection.connect(function(error){
   if(!!error){
-    console.log('Error while connecting with database');
+    console.log('Error while connecting with database', error);
 }
 else {
   console.log('Database is connected');
