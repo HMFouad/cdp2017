@@ -2,51 +2,29 @@ const express = require('express');
 const router = express.Router();
 const bd_connexion = require('../../BD/bd_connexion');
 
+router.post('/inviteToProject/:projectID/', (req, res) => {
+const name = req.body.username_inv;
 
-router.post('/inviteToProject/:projectID', (req, res) => {
-  const name = req.body.username_inv;
-  const projectID = req.params.projectID;
-  console.log("name=" + name + " projectID=" + projectID);
 if (name == "") {
   console.log("You haven't completed all fields");
 }
 else {
-  //Regarde si l'utilisateur est déjà affilié au projet
-  bd_connexion.query("SELECT * FROM `acl` " +
-    "WHERE user_id IN " +
-    "(SELECT id FROM `users` WHERE username=?) " +
-    "AND project_id IN " +
-    "(SELECT id from `projects` WHERE project=?)", [name, project], function (error, resultsAffiliation) {
-    if (resultsAffiliation.toString() != []) { //Si l'utilisateur est déjà affilié au projet
-      res.json({
-        status: true,
-        message: 'User already affiliated with the project'
-      });
+  console.log("SLT");
+  bd_connexion.query("SELECT `id` FROM `users` WHERE username=?", name, function(error, user){
+    if(error){
+      console.log(error);
     }
     else {
-      bd_connexion.query("SELECT id FROM `users` WHERE username=?; " +
-        "SELECT id FROM `projects` WHERE project=?", [name, project], function (error, resultsIfExists) {
-          if (resultsIfExists[0].toString() == [] || resultsIfExists[1].toString() == []) {
-            res.json({
-              status: false,
-              message: 'One of the fields filled is not in the database'
-            });
-          }
-          else {
-            bd_connexion.query("INSERT INTO `acl`(`user_id`, `project_id`) VALUES (?,?)",
-              [resultsIfExists[0][0].id, resultsIfExists[1][0].id],
-              function (error, resultsInsert) {
-                if (error) throw error;
-                res.json({
-                  status: true,
-                  message: 'The user has been affiliated with the project'
-                });
-              });
-          }
+      const idUser = user[0].id;
+      const projectID = req.params.projectID;
+      bd_connexion.query("INSERT INTO `acl`(`user_id`, `project_id`) VALUES ( ?, ? )", [idUser, projectID], function (error2, user) {
+        if (error2) {
+          console.log(error2);
         }
-      );
+      });
     }
   });
 }
 });
+
 module.exports = router;

@@ -17,12 +17,12 @@ Tâches du Sprint 1
 | Tf3 | Créer l'interface de création d'un projet avec comme ids de champs "projectName", "projectDescription" | Annegn | DONE |
 | Tf4 | Créer l'interface de la liste des projets avec comme id de liste "projectsList"  | Annegn | DONE |
 | Tf5 | Créer l'interface de base d'un projet | Annegn | DONE |
-| Tf6 | Créer l'interface d'invitation dans un projet avec comme nom de champ "username_inv" pour l'utilisateur à inviter | Dylan | TODO |
+| Tf6 | Créer l'interface d'invitation dans un projet avec comme nom de champ "username_inv" pour l'utilisateur à inviter | Dylan | DONE |
 | Ts1 | Récupérer et vérifier les données de l'inscription, puis les enregistrer dans la BD | HMFouad | DONE |
-| Ts2 | Récupérer les données de connexion pour les comparer à celles dans la BD | HMFouad | DOING |
+| Ts2 | Récupérer les données de connexion pour les comparer à celles dans la BD | HMFouad | DONE |
 | Ts3 | Récupérer les données du nouveau projet, puis les enregistrer dans la BD | Annegn | DONE |
-| Ts4 | Récupérer les projets à lister de la BD, pour les envoyer au Front | Dylan | DOING |
-| Ts5 | Récupérer les données de l'invitation à un projet, puis les enregistrer dans la BD | Dylan | DOING |
+| Ts4 | Récupérer les projets à lister de la BD, pour les envoyer au Front | Dylan | DONE |
+| Ts5 | Récupérer les données de l'invitation à un projet, puis les enregistrer dans la BD | Dylan | DONE |
 | Tb1 | Créer la table "Users" avec les champs "id", "username" et "password" de la BDD pour l'inscription et la connexion | All | DONE |
 | Tb2 | Créer la table "Projects" avec les champs "id", "project" et "description" de la BDD pour la création d'un projet | All | DONE |
 | Tb3 | Créer la table de jointure "Acl" avec les champs "user_id" et "project_id" de la BDD pour l'invitation d'une personne dans un projet | All | DONE |

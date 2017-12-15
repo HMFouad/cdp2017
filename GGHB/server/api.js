@@ -13,6 +13,9 @@ const updateUsState = require('./services/updateUsState');
 const taskList = require('./services/taskList');
 const deleteTask = require('./services/deleteTask');
 const updateTask = require('./services/updateTask');
+const createSprint = require('./services/createSprint');
+const inviteToProject = require('./services/inviteToProject');
+const listSprints = require('./services/listSprints');
 
 router.use('/', addUser);
 router.use('/', login);
