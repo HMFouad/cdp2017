@@ -1,71 +1,49 @@
-<div class="container py-3">
-  <div class="row">
-      <div class="col-md-6 col-lg-4 mx-auto">
-          <div class="card card-body">
-              <h3 class="text-center mb-4">Create an account</h3>
-              <form class="formGroup"
-                    novalidate
-                    [formGroup]="signUpForm">
-                  <div class="form-group">
-                      <div class="form-group">
-                        <div *ngIf="userName.invalid && userName.touched"
-                            class="text-danger">
-                           <div *ngIf="userName.errors.required">
-                               UserName is required for registration
-                           </div>
-                       </div>                          
-                          <input type="text"
-                                 name="userName"
-                                 class="form-control"
-                                 placeholder="User Name"
-                                 formControlName="userName"/>
-                      </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div *ngIf="password.invalid && password.touched"
-                    class="text-danger">
-                        <div *ngIf="password.errors.required">
-                            Password is required for registration
+<div *ngIf="!userConnected" class="container py-3">
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="card card-body">
+                <h3 class="text-center mb-4">Create an account</h3>
+                <form class="formGroup" novalidate [formGroup]="signUpForm">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <div *ngIf="userName.invalid && userName.touched" class="text-danger">
+                                <div *ngIf="userName.errors.required">
+                                    UserName is required for registration
+                                </div>
+                            </div>
+                            <input type="text" name="userName" class="form-control" placeholder="User Name" formControlName="userName" id="username_inscr" />
                         </div>
                     </div>
-                      <input type="password"
-                             name="password"
-                             class="form-control"
-                             placeholder="Password"
-                             formControlName="password"/>
-                  </div>
 
-                  <div class="form-group">
-                    <div *ngIf="confirmPassword.invalid && confirmPassword.touched"
-                    class="text-danger">
-                        <div *ngIf="confirmPassword.errors.required">
-                            You must Confirm your password
+                    <div class="form-group">
+                        <div *ngIf="password.invalid && password.touched" class="text-danger">
+                            <div *ngIf="password.errors.required">
+                                Password is required for registration
+                            </div>
                         </div>
+                        <input type="password" name="password" class="form-control" placeholder="Password" formControlName="password" id="password_inscr" />
                     </div>
-                      <input type="password"
-                             name="confirmPassword"
-                             class="form-control"
-                             placeholder="Confirm Password"
-                             formControlName="confirmPassword"/>
-                  </div>
 
-                  <div align="center">
-                      <button class="btn btn-primary btn-lg"
-                              type="submit"
-                              name="createAccount"
-                              (click)="submitSignUpForm()">
+                    <div class="form-group">
+                        <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger">
+                            <div *ngIf="confirmPassword.errors.required">
+                                You must Confirm your password
+                            </div>
+                        </div>
+                        <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword" id="rPassword_inscr"
+                        />
+                    </div>
+
+                    <div align="center">
+                        <button class="btn btn-primary btn-lg" type="submit" name="createAccount" (click)="submitSignUpForm()" id="signUp">
                           Sign Up
                       </button>
-                      <button class="btn btn-secondary btn-lg"
-                              type="reset"
-                              name="reset"
-                              (click)="reset()">
+                        <button class="btn btn-secondary btn-lg" type="reset" name="reset" (click)="reset">
                           Reset
                       </button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

@@ -28,7 +28,7 @@
                      name="description"
                       id="projectDescription"
                       rows="3"
-                      placeholder="Enter a short desciption of your project"
+                      placeholder="Enter a short description of your project"
                       formControlName="projectDescription" >
                     </textarea>
                   </div>
@@ -40,13 +40,15 @@
                       <button class="btn btn-primary btn-sm"
                               type="submit"
                               name="createProject"
-                              (click)="submitCreateProjectForm()">
+                              routerLink="/listProjects"
+                              (click)="submitCreateProjectForm()"
+                              id="create">
                           Create Project
                       </button>
                       <button class="btn btn-secondary btn-sm"
                               type="reset"
                               name="reset"
-                              (click)="reset()">
+                              (click)="reset">
                           Reset
                       </button>
                   </div>

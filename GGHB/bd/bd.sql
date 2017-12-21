@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS `cdp` DEFAULT CHARACTER SET utf8 COLLATE utf8_gene
 USE cdp;
 
 CREATE TABLE `acl` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -17,7 +18,8 @@ CREATE TABLE `sprints` (
   `nb` int(11) NOT NULL,
   `date_begin` date DEFAULT NULL,
   `date_end` date DEFAULT NULL,
-  `project_id` int(11) DEFAULT NULL
+  `project_id` int(11) DEFAULT NULL,
+  `sprint_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tasks` (
@@ -51,6 +53,9 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+ALTER TABLE `acl`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `projects`
   ADD PRIMARY KEY (`id`);
 
@@ -70,15 +75,17 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 
+ALTER TABLE `acl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `sprints`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tasks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `us`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

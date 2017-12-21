@@ -1,0 +1,32 @@
+<br/>
+<br/>
+<div class="container" align="Center">
+<button class="btn btn-default" type="submit" name="createNewTask" routerLink="/createTask"> Create a new task </button>
+</div>
+<br/>
+<div class="container" align="Center">
+  <table class="table table-bordered">
+
+    <thead class="thead-dark">
+      <tr>
+ <th scope="col">#</th>
+ <th scope="col">Description</th>
+  <th scope="col">State</th>
+  <th scope="col">Assigned to</th>
+ <th scope="col">Action</th>
+     </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let task of tasks">
+    <td>{{task.id}} </td>
+    <td> {{task.description}}</td>
+    <td contenteditable="true" (blur)="lostfocusState($event)" (keyup)="changedState($event)" >{{task.state}}</td>
+    <td hidden="true">{{task.state}}</td>
+      <td>{{task.user_id}}</td>
+
+   <td>
+         <button type="button" class="btn btn-secondary" *ngIf='!task.onEdit' (click)="onSelectToDelete(task.id)">Delete</button>
+    </td>
+ </tr>
+ </tbody>
+  </table>

@@ -1,0 +1,29 @@
+<div class="container py-3">
+  <button class="btn btn-default" type="submit" name="project" routerLink="/project/">
+    Go back to project
+  </button>
+  <h2>Invite Someone to A Project</h2>
+  <form class="formGroup"
+        novalidate
+        [formGroup]="inviteToProjectForm">
+    <div class="form-group">
+      <div class="form-group">
+        <div class="form-group">
+          <input type="text"
+                 name="username_inv"
+                 id="username_inv"
+                 class="form-control"
+                 placeholder="User Name"
+                 formControlName="username_inv"/>
+        </div>
+        <div *ngIf="username_inv.invalid && username_inv.touched"
+             class="text-danger">
+          Username is required
+        </div>
+        <button type="submit" class="btn btn-default" routerLink="/listProjects" (click)="submitInviteToProjectForm()"> Save</button>
+        <button type="reset" class="btn btn-default">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>
+

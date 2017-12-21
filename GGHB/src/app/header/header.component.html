@@ -1,48 +1,49 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/home">Team GGHB</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" routerLink="/home">Team GGHB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a class="nav-link" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/about">About</a>
-          </li>
-      </ul>
-      <form class="form-inline"
-            novalidate
-            [formGroup]="loginForm">
-          <div class="form-group">
-              <div *ngIf="userName.invalid && userName.touched"
-                   class="text-danger">
-                  <div *ngIf="userName.errors.required">
-                      UserName is required for connexion!
-                  </div>
-              </div>
-              <label >User Name : </label>
-              <input type="text"
-                     placeholder="Enter your userName"
-                     class="form-control" name="userName"
-                     formControlName="userName"/>
-          </div>
-          <div class="form-group">
-            <div *ngIf="password.invalid && password.touched"
-                class="text-danger">
-                <div *ngIf="password.errors.required">
-                    Password is required for connexion!
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a *ngIf="!userConnected" class="nav-link" routerLink="/home">Home</a>
+                <a *ngIf="userConnected" class="nav-link" routerLink="/listProjects">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about">About</a>
+            </li>
+        </ul>
+
+        <form *ngIf="!userConnected" class="form-inline" novalidate [formGroup]="loginForm">
+            <div class="form-group">
+                <div *ngIf="userName.invalid && userName.touched" class="text-danger">
+                    <div *ngIf="userName.errors.required">
+                        UserName is required for connexion!
+                    </div>
                 </div>
-           </div>
-              <label>Password : </label>
-              <input type="password"
-                     placeholder="Enter your password"
-                     class="form-control" name="password"
-                     formControlName="password"/>
-          </div>
-          <button (click)="submitLoginForm()" class="btn btn-primary">Sign In</button>
-      </form>
-  </div>
+                <label>User Name : </label>
+                <input type="text" placeholder="Enter your userName" class="form-control" name="userName" formControlName="userName" id="username_co" />
+            </div>
+            <div class="form-group">
+                <div *ngIf="password.invalid && password.touched" class="text-danger">
+                    <div *ngIf="password.errors.required">
+                        Password is required for connexion!
+                    </div>
+                </div>
+                <label>Password : </label>
+                <input type="password" placeholder="Enter your password" class="form-control" name="password" formControlName="password" id="password_co"
+                />
+            </div>
+            <button (click)="submitLoginForm()" class="btn btn-primary" id="logIn">Sign In</button>
+        </form>
+
+        <form *ngIf="userConnected" class="form-inline" novalidate [formGroup]="loginForm">
+
+                <label id="usernameCoLabel">{{this.userNameLog}}</label>
+            <button (click)="logout()" class="btn btn-danger">logout</button>
+        </form>
+
+    </div>
 </nav>

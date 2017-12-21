@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {AppConstants} from './../app-constants';
+import {AppVariables} from './../app-variables';
 
 @Component({
     selector: 'gghb-header',
@@ -13,6 +14,11 @@ export class HeaderComponent implements OnInit {
 
     private loginForm;
 
+    private userNameLog;
+
+    public userConnected: boolean;
+
+
     public constructor(private httpClient: HttpClient,
         private router: Router) { }
 
@@ -21,6 +27,7 @@ export class HeaderComponent implements OnInit {
             'userName': new FormControl('', [Validators.required]),
             'password': new FormControl('', [Validators.required]),
         });
+        this.userConnected = JSON.parse(sessionStorage.getItem('isConnected'));
     }
 
     public get userName() {
@@ -32,14 +39,16 @@ export class HeaderComponent implements OnInit {
     }
 
     public submitLoginForm() {
-        console.log('Test0!!!!!!!!!!!!!!!!!');
         if (this.loginForm.valid) {
             this.httpClient.post(
                 '/api/login',
                 this.loginForm.value, {
                     responseType: 'json'
                 }).subscribe((response) => { // success
-                    console.log(response);
+                    sessionStorage.setItem('username', this.loginForm.value.userName);
+                    sessionStorage.setItem('isConnected', "true");
+                    this.userNameLog = this.loginForm.value.userName;
+                    this.userConnected = true;
                     // TODO Save token dans le localStorage ?
                     this.router.navigate(['listProjects']);
                 }, (error) => { // error
@@ -48,15 +57,10 @@ export class HeaderComponent implements OnInit {
         }
     }
 
-    /*public logout() {
-        const authToken = localStorage.getItem(AppConstants.AUTH_TOKEN_VALUE_NAME);
-        this.httpClient.delete('/api/tokens', {
-            headers: (new HttpHeaders()).set('Authorization', `${authToken}`),
-            responseType: 'json'
-        }).subscribe(() => {
-            this.doLocalLogout();
-        }, () => {
-            this.doLocalLogout();
-        });
-    }*/
+    public logout() {
+        sessionStorage.setItem('isConnected', "false");
+        this.userConnected = false;
+        this.router.navigate(['home']);
+        sessionStorage.setItem('username', null);
+    }
 }

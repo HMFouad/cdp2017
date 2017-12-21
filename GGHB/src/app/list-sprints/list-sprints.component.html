@@ -1,0 +1,41 @@
+<div class="container" align="Center">
+  <button class="btn btn-default" type="submit" name="createNewSprint" routerLink="/createSprint/">
+    Create a new sprint
+  </button>
+  <button class="btn btn-default" type="submit" name="project" routerLink="/project/">
+    Go back to project
+  </button>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Start date</th>
+    <th scope="col">End date</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <th scope="row">
+    <tr *ngFor="let sprint of sprints">
+      {{ sprint.nb }}
+    </tr>
+  </th>
+  <th scope="row">
+    <tr *ngFor="let sprint of sprints">
+      {{ sprint.date_begin  | slice:0:10}}
+    </tr>
+  </th>
+  <th scope="row">
+  <tr *ngFor="let sprint of sprints">
+      {{ sprint.date_end  | slice:0:10}}
+    </tr>
+  </th>
+  <th scope="row">
+    <tr *ngFor="let sprint of sprints"   (click)="storeCurrentSprintID(sprint.id)">
+      {{ sprint.sprint_name }}
+    </tr>
+  </th>
+  </tbody>
+</table>
