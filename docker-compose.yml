@@ -7,7 +7,7 @@ networks:
 services:
   bd_gghb:
     container_name: bd_gghb_cont
-    build: GGHB/bd/
+    build: GGHB/BD/
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
