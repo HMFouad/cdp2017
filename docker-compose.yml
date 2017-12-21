@@ -1,22 +1,20 @@
-version: '2'
+version: '3'
 
 networks:
   default:
     driver: bridge
 
 services:
-  mysql_gghb:
-    container_name: bd_gghb
-    image: mysql
+  bd_gghb:
+    container_name: bd_gghb_cont
+    build: GGHB/bd/
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
       - 3306:3306
-    volumes:
-      - ./GGHB/BD:/docker-entrypoint-initdb.d
 
   server_gghb:
-    container_name: serverNFront_gghb
+    container_name: server_gghb_cont
     build: GGHB/
     ports:
       - 8080:8080
